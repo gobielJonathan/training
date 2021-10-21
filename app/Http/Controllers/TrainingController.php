@@ -17,7 +17,7 @@ class TrainingController extends Controller
         $banner = Training::where('status', Training::ACTIVE)->latest()->first();
         $stimulus = StimulusMap::where('user_id', Auth::id())
         ->whereHas('Stimulus', function($query)  {
-            $now = date("Y-m-d H:i:s");
+            $now = date("Y-m-d");
             $query->whereDate('start', '>=',$now)->whereDate("end", '<=', $now);
         })
         ->latest()->first();
