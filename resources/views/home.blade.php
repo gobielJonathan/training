@@ -67,7 +67,7 @@
             </div>
             <span class="ml-3 nav-text">
             @if(isset($stimulus))
-             <a href="{{route('addCart', ['banner_id' => $stimulus->training_id], false)}}">Cart</a>
+             <a href="{{route('addCart', ['banner_id' => $stimulus->Stimulus->training_id], false)}}">Cart</a>
              @elseif(isset($banner))
              <a href="{{route('addCart', ['banner_id' => $banner->id], false)}}">Cart</a>
              @endif
