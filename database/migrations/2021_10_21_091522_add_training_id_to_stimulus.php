@@ -15,6 +15,7 @@ class AddTrainingIdToStimulus extends Migration
     {
         Schema::table('stimulus', function (Blueprint $table) {
             //
+            $table->integer("training_id");
         });
     }
 

@@ -13,4 +13,8 @@ class Stimulus extends Model
     public function Detail(){
         return $this->hasMany(StimulusMap::class, 'stimulus_id');
     }
+
+    public function Training(){
+        return $this->belongsTo(Training::class, 'training_id', 'id');
+    }
 }

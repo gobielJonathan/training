@@ -27,7 +27,7 @@ class StimulusController extends Controller
     }
 
     public function get(){
-        $stimulus = Stimulus::with("Detail.User")->get();
+        $stimulus = Stimulus::with(["Detail.User", "Training"])->get();
         return $stimulus;
     }
 

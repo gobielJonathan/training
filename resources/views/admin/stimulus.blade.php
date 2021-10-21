@@ -67,6 +67,9 @@
             <span class="stimulus-periode"></span>
         </td>
         <td>
+            <span class="stimulus-training"></span>
+        </td>
+        <td>
             <button type="button" class="btn btn-remove-stimulus btn-sm bg-transparent">
                 <i class="fa fa-trash" aria-hidden="true"></i>
             </button>
@@ -85,6 +88,7 @@
                         <th>#</th>
                         <th>Stimulus Name</th>
                         <th>Periode</th>
+                        <th>Training</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -133,6 +137,7 @@
             const template = document.getElementById("stimulus-template").content.cloneNode(true)
             $(template).find("input[name='stimulus']").val(id)
             $(template).find(".stimulus-label").text(name)
+            $(template).find(".stimulus-training").text(name)
             $(template).find(".stimulus-periode").text(`${start} s/d ${end}`)
             $(template).find(".stimulus-wrapper").attr('data-id', id)
             $(template).find(".btn-remove-stimulus").attr('data-id', id)
