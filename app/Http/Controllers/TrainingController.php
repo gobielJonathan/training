@@ -15,9 +15,9 @@ class TrainingController extends Controller
     {
         $total_cart = Cart::count();
         $banner = Training::where('status', Training::ACTIVE)->latest()->first();
-        $now = date("Y-m-d H:i:s");
         $stimulus = StimulusMap::where('user_id', Auth::id())
-        ->whereHas('Stimulus', function($query) {
+        ->whereHas('Stimulus', function($query)  {
+            $now = date("Y-m-d H:i:s");
             $query->whereDate('start', '>=',$now)->whereDate("end", '<=', $now);
         })
         ->latest()->first();
