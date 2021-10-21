@@ -37,8 +37,12 @@
 </style>
 @section('content')
 <div class="w-100 h-100 bg-primary d-flex">
-    @if (isset($banner))
+    @if (isset($banner) || isset($stimulus))
+    @if(isset($banner))
+    <img class="container mx-auto" src="{{$stimulus->Stimulus->Training->image}}" alt="banner-thumbnail"> 
+    @elseif(isset($banner))
     <img class="container mx-auto" src="{{$banner->image}}" alt="banner-thumbnail"> 
+    @endif
     @endif
 
     <nav class="position-fixed text-primary">
@@ -62,10 +66,10 @@
                 </i>
             </div>
             <span class="ml-3 nav-text">
-                @if(isset($banner))
-             <a href="{{route('addCart', ['banner_id' => $banner->id], false)}}">Cart</a>
-             @elseif(isset($stimulus))
+            @if(isset($stimulus))
              <a href="{{route('addCart', ['banner_id' => $stimulus->training_id], false)}}">Cart</a>
+             @elseif(isset($banner))
+             <a href="{{route('addCart', ['banner_id' => $banner->id], false)}}">Cart</a>
              @endif
             </span>
         </div>
