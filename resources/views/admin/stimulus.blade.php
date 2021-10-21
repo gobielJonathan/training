@@ -132,12 +132,12 @@
             data
         } = await axios.get('{{route("getStimulus", [], false)}}')
         data.forEach(({
-            id, start,end, name
+            id, start,end, name, training
         }) => {
             const template = document.getElementById("stimulus-template").content.cloneNode(true)
             $(template).find("input[name='stimulus']").val(id)
             $(template).find(".stimulus-label").text(name)
-            $(template).find(".stimulus-training").text(name)
+            $(template).find(".stimulus-training").text(training?.title)
             $(template).find(".stimulus-periode").text(`${start} s/d ${end}`)
             $(template).find(".stimulus-wrapper").attr('data-id', id)
             $(template).find(".btn-remove-stimulus").attr('data-id', id)
