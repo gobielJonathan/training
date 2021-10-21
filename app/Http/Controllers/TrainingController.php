@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Training;
+use App\Models\StimulusMap;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class TrainingController extends Controller
@@ -13,7 +15,8 @@ class TrainingController extends Controller
     {
         $total_cart = Cart::count();
         $banner = Training::where('status', Training::ACTIVE)->latest()->first();
-        return view('home', compact('total_cart', 'banner'));
+        $stimulus = StimulusMap::where('user_id', Auth::id())->latest()->first();
+        return view('home', compact('total_cart', 'banner', 'stimulus'));
     }
 
     public function add(Request $request)

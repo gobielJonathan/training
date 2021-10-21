@@ -33,6 +33,15 @@
                         <input type="date" class="form-control" name="end" 
                             placeholder="End Date">
                     </div>
+
+
+                    <div class="form-group">
+                        <select name="training_id" class="form-control">
+                            @foreach($training as $t) 
+                                <option value="{{$t->id}}">{{$t->title}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <button class="btn w-100 bg-primary text-white">
                         Add
                     </button>

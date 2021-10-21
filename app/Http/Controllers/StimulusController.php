@@ -21,6 +21,7 @@ class StimulusController extends Controller
         $s->name  = $request->get('name');
         $s->start  = $request->get('start');
         $s->end  = $request->get('end');
+        $s->training_id = $request->get("training_id");
         $s->save();
         return redirect()->back();
     }

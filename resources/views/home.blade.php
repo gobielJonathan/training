@@ -42,7 +42,7 @@
     @endif
 
     <nav class="position-fixed text-primary">
-        @if (isset($banner))
+        @if (isset($banner) || isset($stimulus))
         <div class="nav-label">
             <div style="width: 16px">
                 <i class="fa fa-plus" aria-hidden="true"></i>
@@ -55,14 +55,18 @@
 
 
         @auth
-        @if (isset($banner))
+        @if (isset($banner) || isset($stimulus))
         <div class="nav-label">
             <div style="width: 16px">
                 <i class="fa fa-shopping-cart" aria-hidden="true">
                 </i>
             </div>
             <span class="ml-3 nav-text">
+                @if(isset($banner))
              <a href="{{route('addCart', ['banner_id' => $banner->id], false)}}">Cart</a>
+             @elseif(isset($stimulus))
+             <a href="{{route('addCart', ['banner_id' => $stimulus->training_id], false)}}">Cart</a>
+             @endif
             </span>
         </div>
         @endif
