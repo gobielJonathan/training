@@ -38,7 +38,7 @@
 @section('content')
 <div class="w-100 h-100 bg-primary d-flex">
     @if (isset($banner) || isset($stimulus))
-    @if(isset($banner))
+    @if(isset($stimulus))
     <img class="container mx-auto" src="{{$stimulus->Stimulus->Training->image}}" alt="banner-thumbnail"> 
     @elseif(isset($banner))
     <img class="container mx-auto" src="{{$banner->image}}" alt="banner-thumbnail"> 
