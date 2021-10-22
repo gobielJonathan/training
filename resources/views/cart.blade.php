@@ -142,8 +142,7 @@
                 'X-CSRF-TOKEN': "{{csrf_token()}}"
             }
         }).then(res => {
-            console.log(res)
-            if(res != "null"){
+            if(res != null){
                 const {total} = res
                 $(".text-price").text(total)
                 updateValueQty(id, true)
@@ -161,9 +160,8 @@
                 'X-CSRF-TOKEN': "{{csrf_token()}}"
             }
         }).then(res => {
-            console.log(res)
 
-            if(res != "null"){
+            if(res != null){
                 const {total} = res
                 $(".text-price").text(total)
                 updateValueQty(id)
