@@ -14,7 +14,7 @@
            @foreach ($carts as $item)
            <div class="p-4 box-shadow box-rounded mb-4 cart-item">
                <div class="row">
-                   <div class="col-md-12 col-lg-10">
+                   <div class="col-12">
                        <div class="d-flex">
                            <div class="col-md-12 col-lg-8">
                                @if(isset($item->User->StimulusMapOnGoing))
@@ -78,7 +78,8 @@
                            </div>
                        </div>
                    </div>
-                   <div class="col-2 d-flex">
+               </div>
+                <div class="col-2 d-flex">
                        <form action="{{route('removeCart', ['id'=> $item->id], false)}}" method="post" class="h-fit-content mt-auto ml-auto">
                            @csrf
                            <button class="btn btn-remove-cart btn-sm bg-transparent">
@@ -86,7 +87,6 @@
                            </button>
                        </form>
                    </div>
-               </div>
            </div>
            @endforeach
            @else
