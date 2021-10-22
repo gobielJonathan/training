@@ -35,13 +35,13 @@
                                 <p>Rp.{{$ls->training->price}} <br>
                                 <div class="input-group">
                                     <span class="input-group-prepend">
-                                        <button type="button" class="btn btn-sm"  data-type="minus" data-id="{{$item->id}}">
+                                        <button type="button" class="btn btn-sm"  data-type="minus" data-id="{{$item->id}}" data-training="{{$ls->training->id}}">
                                             <span class="fa fa-minus"></span>
                                         </button>
                                     </span>
                                     <input type="text" id="qty-{{$item->id}}" class="form-control input-number" value="{{$item->total}}" min="1">
                                     <span class="input-group-append">
-                                        <button type="button" class="btn btn-sm" data-type="plus" data-id="{{$item->id}}">
+                                        <button type="button" class="btn btn-sm" data-type="plus" data-id="{{$item->id}}" data-training="{{$ls->training->id}}">
                                             <span class="fa fa-plus"></span>
                                         </button>
                                     </span>
@@ -51,13 +51,13 @@
                                 <p>Rp.{{$ls->training->price}}</p> <br>
                                 <div class="input-group">
                                     <span class="input-group-prepend">
-                                        <button type="button" class="btn btn-sm"  data-type="minus" data-id="{{$item->id}}">
+                                        <button type="button" class="btn btn-sm"  data-type="minus" data-id="{{$item->id}}" data-training="{{$item->training->id}}">
                                             <span class="fa fa-minus"></span>
                                         </button>
                                     </span>
                                     <input type="text" id="qty-{{$item->id}}" class="form-control input-number" value="{{$item->total}}" min="1">
                                     <span class="input-group-append">
-                                        <button type="button" class="btn btn-sm" data-type="plus" data-id="{{$item->id}}">
+                                        <button type="button" class="btn btn-sm" data-type="plus" data-id="{{$item->id}}" data-training="{{$item->training->id}}">
                                             <span class="fa fa-plus"></span>
                                         </button>
                                     </span>
@@ -134,8 +134,9 @@
 
     $("[data-type='plus']").click(function() {
         const id = $(this).data('id')
+        const training_id = $(this).data('training')
         $.ajax({
-            url :`/cart/add/${id}`,
+            url :`/cart/add/${id}/${training_id}`,
             method : "POST",
             headers: {
                 'X-CSRF-TOKEN': "{{csrf_token()}}"
@@ -151,8 +152,9 @@
 
      $("[data-type='minus']").click(function() {
         const id = $(this).data('id')
+        const training_id = $(this).data('training')
         $.ajax({
-            url :`/cart/remove/${id}`,
+            url :`/cart/remove/${id}/${training_id}`,
             method : "POST",
             headers: {
                 'X-CSRF-TOKEN': "{{csrf_token()}}"
