@@ -36,13 +36,13 @@
 
                                 <div class="input-group">
                                     <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-number"  disabled="disabled" data-type="minus" data-id="{{$t->id}}">
+                                        <button type="button" class="btn btn-default btn-number"  disabled="disabled" data-type="minus" data-id="{{$item->id}}">
                                             <span class="glyphicon glyphicon-minus"></span>
                                         </button>
                                     </span>
-                                    <input type="text" id="qty-{{$t->id}}" class="form-control input-number" value="{{$t->total}}" min="1">
+                                    <input type="text" id="qty-{{$item->id}}" class="form-control input-number" value="{{$item->total}}" min="1">
                                     <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-id="{{$t->id}}">
+                                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-id="{{$item->id}}">
                                             <span class="glyphicon glyphicon-plus"></span>
                                         </button>
                                     </span>
@@ -53,13 +53,13 @@
                                 <p>Rp.{{$item->training->price}} x 
                                       <div class="input-group">
                                     <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-number"  disabled="disabled" data-type="minus" data-id="{{$t->id}}">
+                                        <button type="button" class="btn btn-default btn-number"  disabled="disabled" data-type="minus" data-id="{{$item->id}}">
                                             <span class="glyphicon glyphicon-minus"></span>
                                         </button>
                                     </span>
-                                    <input type="text" id="qty-{{$t->id}}" class="form-control input-number" value="{{$t->total}}" min="1">
+                                    <input type="text" id="qty-{{$item->id}}" class="form-control input-number" value="{{$item->total}}" min="1">
                                     <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-id="{{$t->id}}">
+                                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-id="{{$item->id}}">
                                             <span class="glyphicon glyphicon-plus"></span>
                                         </button>
                                     </span>
