@@ -19,7 +19,7 @@ class StimulusMap extends Model
 
     public function StimulusOnGoing(){
         $now = date("Y-m-d");
-        return $this->Stimulus()->whereDate("start", '>=',$now );
+        return $this->Stimulus()->whereDate("start", '<=',$now )->whereDate("end", ">=", $now);
     }
 
 }
