@@ -16,14 +16,20 @@
                <div class="row">
                    <div class="col-sm-12 col-md-10">
                        <div class="d-flex">
-                           <img src="{{$item->training->image}}" class="box-rounded" alt="banner-thumbnail"
+                           @if(isset($item->user->stimulus_map_on_going))
+                           <img src="{{$item->user->stimulus_map_on_going->stimulus->training->image}}" class="box-rounded" alt="banner-thumbnail"
                                style="width: 400px;height: 400px;">
+                            @else
+                            <img src="{{$item->training->image}}" class="box-rounded" alt="banner-thumbnail"
+                               style="width: 400px;height: 400px;">
+                            @endif
                            <div class=" ml-3">
-                               @if(isset($item->user->latest_stimulus_map))
-                            @php
-                               $ls = $item->user->latest_stimulus_map;
-                               @endphp
-                                <h2 class="text-bold">{{$ls->name}}</h2>
+                               @if(isset($item->user->stimulus_map_on_going))
+                                @php
+                                    $ls = $item->user->stimulus_map_on_going->stimulus;
+                                @endphp
+                                <h2 class="text-bold">{{$ls->training->title}}</h2>
+                                <h4>{{$ls->name}}</h4>
                                 <p>Rp.{{$ls->training->price}} x {{$item->total}}</p>
                                @elseif($item->training)
                                 <h2 class="text-bold">{{$item->training->title}}</h2>
