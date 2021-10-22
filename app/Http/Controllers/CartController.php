@@ -16,8 +16,8 @@ class CartController extends Controller
     {
         $carts = Cart::with(['User.StimulusMapOnGoing.Stimulus.Training', 'Training'])
         ->where('user_id', Auth::id())
-        ->get();
-        return (json_encode($carts));
+        ->latest()
+        ->first();
         return view('cart', compact('carts'));
     }
 
