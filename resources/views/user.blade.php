@@ -41,17 +41,6 @@
                     <h5 class="text-bold">Email</h5>
                     <p class="text-secondary">{{$user->email}}</p>
                 </div>
-                <div class="col-6">
-                    <h5 class="text-bold">Phone</h5>
-                    <p class="text-secondary">{{$user->telephone}}</p>
-                </div>
-            </div>
-
-            <div class="row mt-2">
-                <div class="col-6">
-                    <h5 class="text-bold">Address</h5>
-                    <p class="text-secondary">{{$user->address}}</p>
-                </div>
             </div>
         </div>
     </div>

@@ -37,16 +37,12 @@
 </style>
 @section('content')
 <div class="w-100 h-100 bg-primary d-flex">
-    @if (isset($banner) || isset($stimulus))
-    @if(isset($stimulus))
-    <img class="container mx-auto" src="{{$stimulus->Stimulus->Training->image}}" alt="banner-thumbnail"> 
-    @elseif(isset($banner))
+    @if (isset($banner))
     <img class="container mx-auto" src="{{$banner->image}}" alt="banner-thumbnail"> 
-    @endif
     @endif
 
     <nav class="position-fixed text-primary">
-        @if (isset($banner) || isset($stimulus))
+        @if (isset($banner))
         <div class="nav-label">
             <div style="width: 16px">
                 <i class="fa fa-plus" aria-hidden="true"></i>
@@ -59,18 +55,14 @@
 
 
         @auth
-        @if (isset($banner) || isset($stimulus))
+        @if (isset($banner))
         <div class="nav-label">
             <div style="width: 16px">
                 <i class="fa fa-shopping-cart" aria-hidden="true">
                 </i>
             </div>
             <span class="ml-3 nav-text">
-            @if(isset($stimulus))
-             <a href="{{route('addCart', ['banner_id' => $stimulus->Stimulus->training_id], false)}}">Cart</a>
-             @elseif(isset($banner))
              <a href="{{route('addCart', ['banner_id' => $banner->id], false)}}">Cart</a>
-             @endif
             </span>
         </div>
         @endif
