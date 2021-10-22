@@ -35,7 +35,7 @@
                                 <p>Rp.{{$ls->training->price}} <br>
                                 <div class="input-group">
                                     <span class="input-group-prepend">
-                                        <button type="button" class="btn btn-sm"  disabled="disabled" data-type="minus" data-id="{{$item->id}}">
+                                        <button type="button" class="btn btn-sm"  data-type="minus" data-id="{{$item->id}}">
                                             <span class="fa fa-minus"></span>
                                         </button>
                                     </span>
@@ -51,7 +51,7 @@
                                 <p>Rp.{{$ls->training->price}}</p> <br>
                                 <div class="input-group">
                                     <span class="input-group-prepend">
-                                        <button type="button" class="btn btn-sm"  disabled="disabled" data-type="minus" data-id="{{$item->id}}">
+                                        <button type="button" class="btn btn-sm"  data-type="minus" data-id="{{$item->id}}">
                                             <span class="fa fa-minus"></span>
                                         </button>
                                     </span>
