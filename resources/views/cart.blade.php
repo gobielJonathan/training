@@ -39,7 +39,7 @@
                                             <span class="fa fa-minus"></span>
                                         </button>
                                     </span>
-                                    <input type="text" id="qty-{{$item->id}}" class="form-control input-number" value="{{$item->total}}" min="1">
+                                    <input type="text" id="qty-{{$item->id}}" disabled class="rounded form-control input-number" value="{{$item->total}}" min="1">
                                     <span class="input-group-append">
                                         <button type="button" class="btn btn-sm" data-type="plus" data-id="{{$item->id}}" data-training="{{$ls->training->id}}">
                                             <span class="fa fa-plus"></span>
@@ -55,7 +55,7 @@
                                             <span class="fa fa-minus"></span>
                                         </button>
                                     </span>
-                                    <input type="text" id="qty-{{$item->id}}" class="form-control input-number" value="{{$item->total}}" min="1">
+                                    <input type="text" id="qty-{{$item->id}}" disabled class="rounded form-control input-number" value="{{$item->total}}" min="1">
                                     <span class="input-group-append">
                                         <button type="button" class="btn btn-sm" data-type="plus" data-id="{{$item->id}}" data-training="{{$item->training->id}}">
                                             <span class="fa fa-plus"></span>

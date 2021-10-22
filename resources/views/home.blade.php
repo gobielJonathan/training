@@ -11,6 +11,7 @@
         padding-bottom: .5rem;
         background-color: white;
         transition: all .2s ease-in-out;
+        box-shadow : 0 0 3px var(--bg-primary);
     }
     nav .nav-label{
         width: 130px;
@@ -18,6 +19,10 @@
         font-size: 1.2rem;
         display: flex;
         margin-bottom: .5rem;
+    }
+
+    .nav-label a {
+        color: "black"  !important;
     }
 
     nav .btn-collapse{
@@ -36,12 +41,12 @@
 
 </style>
 @section('content')
-<div class="w-100 h-100 bg-primary d-flex">
+<div class="w-100 h-100  d-flex">
     @if (isset($banner))
     <img class="container mx-auto" src="{{$banner->image}}" alt="banner-thumbnail"> 
     @endif
 
-    <nav class="position-fixed text-primary">
+    <nav class="position-fixed text-black">
         @if (isset($banner))
         <div class="nav-label">
             <div style="width: 16px">
