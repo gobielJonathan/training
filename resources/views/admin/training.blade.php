@@ -49,6 +49,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Id</th>
             <th>Image</th>
             <th>Title</th>
             <th>Price</th>
@@ -59,6 +60,7 @@
     <tbody class="training-list">
         @foreach ($training as $item)
         <tr data-id="{{$item->id}}">
+            <td>{{$item->id}}</td>
             <td>
                 <img src="{{$item->image}}" alt="training-thumbnail" style="width: 100px;">
             </td>
