@@ -14,7 +14,10 @@ class CartController extends Controller
     }
     public function index()
     {
-        $carts = Cart::with(['User.LatestStimulusMap.Stimulus.Training', 'Training'])->where('user_id', Auth::id())->get();
+        $carts = Cart::with(['User.StimulusMap' => function($query) {
+            $now = date("Y-m-d");
+            $query->whereDate('start' , '>=', $now)->whereDate('end', '<=', $now)->with(['Stimulus.Training']);
+        }, 'Training'])->where('user_id', Auth::id())->get();
         return (json_encode($carts));
         return view('cart', compact('carts'));
     }

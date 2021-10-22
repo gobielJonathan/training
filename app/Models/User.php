@@ -50,14 +50,7 @@ class User extends Authenticatable
     public function StimulusMap(){
         return $this->hasMany(StimulusMap::class, 'user_id');
     }
-
-    public function LatestStimulusMap(){
-        return $this->StimulusMap()->whereHas('Stimulus', function($query){
-            $now = date("Y-m-d");
-            $query->whereDate('start', '>=',$now)->whereDate("end", '<=', $now);
-        })->latest();
-    }
-
+    
     public function isAdmin(){
         return $this->role === User::ADMIN;
     }
