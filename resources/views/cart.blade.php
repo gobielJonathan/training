@@ -134,6 +134,17 @@
             }
         }).then(res => console.log(res))
     })
+
+     $("[data-type='minus']").click(function() {
+        const id = $(this).data('id')
+        $.ajax({
+            url :`/cart/add/${id}`,
+            method : "POST",
+            headers: {
+                'X-CSRF-TOKEN': "{{csrf_token()}}"
+            }
+        }).then(res => console.log(res))
+    })
 </script>
 @endsection
 

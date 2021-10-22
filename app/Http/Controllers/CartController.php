@@ -27,6 +27,15 @@ class CartController extends Controller
         $c->save();
         return 'ok';
     }
+
+     public function decrease(Request $request, $id){
+        $c = Cart::find($id);
+        if($c->total - 1 > 0)
+        $c->total--;
+        $c->save();
+        return 'ok';
+    }
+
     public function buy(Request $request, $banner_id)
     {
         $c = Cart::where([
