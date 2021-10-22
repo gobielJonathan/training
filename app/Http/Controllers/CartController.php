@@ -14,9 +14,9 @@ class CartController extends Controller
     }
     public function index()
     {
-        $carts = Cart::with(['User.StimulusMap' => function($query) {
+        $carts = Cart::with(['User.StimulusMap.Stimulus' => function($query) {
             $now = date("Y-m-d");
-            $query->whereDate('start' , '>=', $now)->whereDate('end', '<=', $now)->with(['Stimulus.Training']);
+            $query->whereDate('start' , '>=', $now)->whereDate('end', '<=', $now)->with(['Training']);
         }, 'Training'])->where('user_id', Auth::id())->get();
         return (json_encode($carts));
         return view('cart', compact('carts'));
