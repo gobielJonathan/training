@@ -14,25 +14,25 @@
            @foreach ($carts as $item)
            <div class="p-4 box-shadow box-rounded mb-4 cart-item">
                <div class="row">
-                   <div class="col-sm-12 col-md-9">
+                   <div class="col-sm-12 col-md-10">
                        <div class="d-flex">
                            <img src="{{$item->training->image}}" class="box-rounded" alt="banner-thumbnail"
-                               style="width: 100px;height: 100px;">
+                               style="width: 400px;height: 400px;">
                            <div class=" ml-3">
-                               <h5>{{$item->training->title}}</h5>
-                               <p>Rp.{{$item->training->price}} x {{$item->total}}</p>
-                               <h4 class="text-bold">
-                                   @php
-                                   $st = $item->User->StimulusMap;
-                                   @endphp
-                                   @if (isset($st))
-                                   {{$st->Stimulus->name}}
-                                   @endif
-                               </h4>
+                               @if(isset($item->user->latest_stimulus_map))
+                            @php
+                               $ls = $item->user->latest_stimulus_map;
+                               @endphp
+                                <h2 class="text-bold">{{$ls->name}}</h2>
+                                <p>Rp.{{$ls->training->price}} x {{$item->total}}</p>
+                               @elseif($item->training)
+                                <h2 class="text-bold">{{$item->training->title}}</h2>
+                                <p>Rp.{{$item->training->price}} x {{$item->total}}</p>
+                               @endif
                            </div>
                        </div>
                    </div>
-                   <div class="col-3 d-flex">
+                   <div class="col-2 d-flex">
                        <form action="{{route('removeCart', ['id'=> $item->id], false)}}" method="post" class="h-fit-content mt-auto ml-auto">
                            @csrf
                            <button class="btn btn-remove-cart btn-sm bg-transparent">
