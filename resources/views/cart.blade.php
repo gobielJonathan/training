@@ -48,7 +48,7 @@
                                 </div>
                                @elseif($item->training)
                                 <h3 class="text-bold">{{$item->training->title}}</h3>
-                                <p>Rp.{{$ls->training->price}}</p> <br>
+                                <p>Rp.{{$item->training->price}}</p> <br>
                                 <div class="input-group">
                                     <span class="input-group-prepend">
                                         <button type="button" class="btn btn-sm"  data-type="minus" data-id="{{$item->id}}" data-training="{{$item->training->id}}">
