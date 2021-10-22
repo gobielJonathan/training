@@ -141,7 +141,7 @@
                 'X-CSRF-TOKEN': "{{csrf_token()}}"
             }
         }).then(res => {
-            res === "ok" && updateValueQty(id)
+            res === "ok" && updateValueQty(id, true)
         })
     })
 
