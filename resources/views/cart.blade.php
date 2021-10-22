@@ -124,6 +124,14 @@
 
 @section("script")
 <script>
+
+    function updateValueQty(id, increment = false){
+        if(increment)
+        $(`#qty-${id}`).val(+ $(`#qty-${id}`) + 1)
+        else 
+        $(`#qty-${id}`).val(+ $(`#qty-${id}`) - 1)
+    }
+
     $("[data-type='plus']").click(function() {
         const id = $(this).data('id')
         $.ajax({
@@ -132,7 +140,9 @@
             headers: {
                 'X-CSRF-TOKEN': "{{csrf_token()}}"
             }
-        }).then(res => console.log(res))
+        }).then(res => {
+            updateValueQty(id)
+        })
     })
 
      $("[data-type='minus']").click(function() {
@@ -143,7 +153,9 @@
             headers: {
                 'X-CSRF-TOKEN': "{{csrf_token()}}"
             }
-        }).then(res => console.log(res))
+        }).then(res => {
+            updateValueQty(id)
+        })
     })
 </script>
 @endsection
