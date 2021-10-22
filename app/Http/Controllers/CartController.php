@@ -30,10 +30,12 @@ class CartController extends Controller
 
      public function decrease(Request $request, $id){
         $c = Cart::find($id);
-        if($c->total - 1 > 0)
-        $c->total--;
+        if($c->total - 1 > 0){
+            $c->total--;
         $c->save();
         return 'ok';
+        }
+        return 'fail';
     }
 
     public function buy(Request $request, $banner_id)
