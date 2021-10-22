@@ -50,6 +50,10 @@ class User extends Authenticatable
     public function StimulusMap(){
         return $this->hasMany(StimulusMap::class, 'user_id');
     }
+
+    public function StimulusMapOnGoing(){
+        return $this->hasOne(StimulusMap::class, 'user_id')->whereHas('StimulusOnGoing');
+    }
     
     public function isAdmin(){
         return $this->role === User::ADMIN;
