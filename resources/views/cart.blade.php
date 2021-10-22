@@ -127,9 +127,9 @@
 
     function updateValueQty(id, increment = false){
         if(increment)
-        $(`#qty-${id}`).val(+ $(`#qty-${id}`) + 1)
+        $(`#qty-${id}`).val(+$(`#qty-${id}`).val() + 1)
         else 
-        $(`#qty-${id}`).val(+ $(`#qty-${id}`) - 1)
+        $(`#qty-${id}`).val(+$(`#qty-${id}`).val() - 1)
     }
 
     $("[data-type='plus']").click(function() {
