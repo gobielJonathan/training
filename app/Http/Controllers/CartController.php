@@ -23,7 +23,7 @@ class CartController extends Controller
 
     public function add(Request $request, $id){
         $c = Cart::find($id);
-        $c++;
+        $c->total++;
         $c->save();
         return 'ok';
     }
