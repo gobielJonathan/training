@@ -48,7 +48,7 @@ class User extends Authenticatable
     ];
 
     public function StimulusMap(){
-        return $this->hasMany(StimulusMap::class, 'user_id')->latest()->first();
+        return $this->hasMany(StimulusMap::class, 'user_id');
     }
 
     public function isAdmin(){
