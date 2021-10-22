@@ -46,7 +46,7 @@ class CartController extends Controller
         }
         return response()->json([
             'status' => 'failed',
-            'total' => (int)$c->total * (int) $t->price
+            'total' => 0
         ]);;
     }
 
