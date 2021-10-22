@@ -17,9 +17,9 @@
                    <div class="col-md-12 col-lg-10">
                        <div class="d-flex">
                            <div class="col-md-12 col-lg-8">
-                               {{dd($item->user->stimulus_map_on_going)}}
-                               @if(isset($item->user->stimulus_map_on_going))
-                                <img src="{{$item->user->stimulus_map_on_going->stimulus->training->image}}" class="box-rounded w-100 h-100" alt="banner-thumbnail"
+                               {{dd($item->User->StimulusMapOnGoing)}}
+                               @if(isset($item->User->StimulusMapOnGoing))
+                                <img src="{{$item->User->StimulusMapOnGoing->stimulus->training->image}}" class="box-rounded w-100 h-100" alt="banner-thumbnail"
                                 style="max-height:500px">
                             @else
                                 <img src="{{$item->training->image}}" class="box-rounded w-100 h-100" alt="banner-thumbnail"
@@ -27,9 +27,9 @@
                             @endif
                            </div>
                            <div class="col-md-12 col-lg-4">
-                               @if(isset($item->user->stimulus_map_on_going))
+                               @if(isset($item->User->StimulusMapOnGoing))
                                 @php
-                                    $ls = $item->user->stimulus_map_on_going->stimulus;
+                                    $ls = $item->User->StimulusMapOnGoing->Stimulus;
                                 @endphp
                                 <h3 class="text-bold">{{$ls->training->title}}</h3>
                                 <h5>{{$ls->name}}</h5>
