@@ -95,7 +95,7 @@
                 <h5 class="text-bold">Summary</h5>
                 <div class="row">
                     <div class="col-4 text-secondary">Subtotal</div>
-                    <div class="col-8 text-secondary text-right">Rp.{{$total_price}}</div>
+                    <div class="col-8 text-secondary text-right text-price">Rp.{{$total_price}}</div>
                 </div>
 
                 <hr class="my-4">
@@ -105,7 +105,7 @@
                         <h5 class="text-bold">Total Price</h5>
                     </div>
                     <div class="col-8">
-                        <h5 class="text-bold text-right">Rp.{{$total_price}}</h5>
+                        <h5 class="text-bold text-right text-price">Rp.{{$total_price}}</h5>
                     </div>
                 </div>
 
@@ -141,7 +141,11 @@
                 'X-CSRF-TOKEN': "{{csrf_token()}}"
             }
         }).then(res => {
-            res === "ok" && updateValueQty(id, true)
+            if(res != "null"){
+                const {total} = res
+                $(".text-price").text(total)
+                updateValueQty(id, true)
+            }
         })
     })
 
@@ -154,7 +158,11 @@
                 'X-CSRF-TOKEN': "{{csrf_token()}}"
             }
         }).then(res => {
-            res === "ok" && updateValueQty(id)
+            if(res != "null"){
+                const {total} = res
+                $(".text-price").text(total)
+                updateValueQty(id)
+            }
         })
     })
 </script>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Training;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,21 +22,29 @@ class CartController extends Controller
         return view('cart', compact('carts'));
     }
 
-    public function add(Request $request, $id){
+    public function add(Request $request, $id, $training_id){
         $c = Cart::find($id);
         $c->total++;
         $c->save();
-        return 'ok';
+        $t = Training::find($training_id);
+        return json_encode([
+            'status' => 'ok',
+            'total' => (int)$c->total * (int) $t->price
+        ]);
     }
 
-     public function decrease(Request $request, $id){
+     public function decrease(Request $request, $id,$training_id){
         $c = Cart::find($id);
         if($c->total - 1 > 0){
             $c->total--;
         $c->save();
-        return 'ok';
+ $t = Training::find($training_id);
+        return json_encode([
+            'status' => 'ok',
+            'total' => (int)$c->total * (int) $t->price
+        ]);
         }
-        return 'fail';
+        return null;
     }
 
     public function buy(Request $request, $banner_id)
