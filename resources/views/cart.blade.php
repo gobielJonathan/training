@@ -16,7 +16,7 @@
                <div class="row">
                    <div class="col-12">
                        <div class="d-flex">
-                           <div class="col-md-12 col-lg-8">
+                           <div class="col-md-12 col-lg-7">
                                @if(isset($item->User->StimulusMapOnGoing))
                                 <img src="{{$item->User->StimulusMapOnGoing->stimulus->training->image}}" class="box-rounded w-100 h-100" alt="banner-thumbnail"
                                 style="max-height:500px">
@@ -25,12 +25,12 @@
                                 style="max-height:500px">
                             @endif
                            </div>
-                           <div class="col-md-12 col-lg-4">
+                           <div class="col-md-12 col-lg-5">
                                @if(isset($item->User->StimulusMapOnGoing))
                                 @php
                                     $ls = $item->User->StimulusMapOnGoing->Stimulus;
                                 @endphp
-                                <h3 class="text-bold">{{$ls->training->title}}</h3>
+                                <h3 class="text-bold text-break">{{$ls->training->title}}</h3>
                                 <h5>{{$ls->name}}</h5>
                                 <p>Rp.{{$ls->training->price}} <br>
                                 <div class="input-group">
@@ -121,3 +121,16 @@
     </div>
 </div>
 @endsection
+
+@section("script")
+<script>
+    $("[data-type='plus']").click(function() {
+        const id = $(this).data('id')
+        $.ajax({
+            url :`/cart/add/${id}`,
+            method : "POST",
+        }).then(res => console.log(res))
+    })
+</script>
+@endsection
+

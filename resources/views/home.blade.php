@@ -62,7 +62,7 @@
                 </i>
             </div>
             <span class="ml-3 nav-text">
-             <a href="{{route('addCart', ['banner_id' => $banner->id], false)}}">Cart</a>
+             <a href="{{route('buyCart', ['banner_id' => $banner->id], false)}}">Cart</a>
             </span>
         </div>
         @endif

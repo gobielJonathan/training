@@ -21,7 +21,13 @@ class CartController extends Controller
         return view('cart', compact('carts'));
     }
 
-    public function add(Request $request, $banner_id)
+    public function add(Request $request, $id){
+        $c = Cart::find($id);
+        $c++;
+        $c->save();
+        return 'ok';
+    }
+    public function buy(Request $request, $banner_id)
     {
         $c = Cart::where([
             ['user_id', '=', Auth::id()],
@@ -32,7 +38,8 @@ class CartController extends Controller
             $c = new Cart;
             $c->training_id = $banner_id;
             $c->user_id = Auth::id();
-        }
+             $c->total = 1;
+        } 
         $c->save();
         return redirect()->route('seeCart');
     }
