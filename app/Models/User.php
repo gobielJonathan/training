@@ -52,7 +52,10 @@ class User extends Authenticatable
     }
 
     public function LatestStimulusMap(){
-        return $this->hasOne(StimulusMap::class, 'user_id')->latest();
+        return $this->StimulusMap()->whereHas('Stimulus', function($query){
+            $now = date("Y-m-d");
+            $query->whereDate('start', '>=',$now)->whereDate("end", '<=', $now);
+        })->latest();
     }
 
     public function isAdmin(){

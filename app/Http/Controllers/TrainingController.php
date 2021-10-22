@@ -15,13 +15,7 @@ class TrainingController extends Controller
     {
         $total_cart = Cart::count();
         $banner = Training::where('status', Training::ACTIVE)->latest()->first();
-        $stimulus = StimulusMap::where('user_id', Auth::id())
-        // ->whereHas('Stimulus', function($query)  {
-        //     $now = date("Y-m-d");
-        //     $query->whereDate('start', '>=',$now)->whereDate("end", '<=', $now);
-        // })
-        ->latest()->first();
-        return view('home', compact('total_cart', 'banner', 'stimulus'));
+        return view('home', compact('total_cart', 'banner'));
     }
 
     public function add(Request $request)
