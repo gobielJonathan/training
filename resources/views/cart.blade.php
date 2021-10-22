@@ -32,11 +32,8 @@
                                 @endphp
                                 <h3 class="text-bold">{{$ls->training->title}}</h3>
                                 <h5>{{$ls->name}}</h5>
-                                <div class="d-flex">
-                                    <div class="col-3"><p>Rp.{{$ls->training->price}} </div>
-
-                                    <div class="col-9">
-                                          <div class="input-group">
+                                <p>Rp.{{$ls->training->price}} <br>
+                                <div class="input-group">
                                     <span class="input-group-prepend">
                                         <button type="button" class="btn btn-sm"  disabled="disabled" data-type="minus" data-id="{{$item->id}}">
                                             <span class="fa fa-minus"></span>
@@ -48,17 +45,11 @@
                                             <span class="fa fa-plus"></span>
                                         </button>
                                     </span>
-                                </div>
-                                    </div>
-                                </p>
                                 </div>
                                @elseif($item->training)
                                 <h3 class="text-bold">{{$item->training->title}}</h3>
-                                <div class="d-flex">
-                                    <div class="col-3"><p>Rp.{{$ls->training->price}} </div>
-
-                                    <div class="col-9">
-                                          <div class="input-group">
+                                <p>Rp.{{$ls->training->price}}</p> <br>
+                                <div class="input-group">
                                     <span class="input-group-prepend">
                                         <button type="button" class="btn btn-sm"  disabled="disabled" data-type="minus" data-id="{{$item->id}}">
                                             <span class="fa fa-minus"></span>
@@ -70,9 +61,6 @@
                                             <span class="fa fa-plus"></span>
                                         </button>
                                     </span>
-                                </div>
-                                    </div>
-                                </p>
                                 </div>
                                @endif
                            </div>
