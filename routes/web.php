@@ -41,7 +41,7 @@ Route::get('/payment', [PaymentTypeController::class, 'index'])->name('seePaymen
 Route::get('/buy/{banner_id}', [CartController::class, 'buy'])->name('buyCart');
 
 Route::post('/cart/add/{id}/{training_id}', [CartController::class, 'add'])->name('addCart');
-Route::post('/cart/remove/{id}/{training_id}', [CartController::class, 'decrease'])->name('removeCart');
+Route::post('/cart/remove/{id}/{training_id}', [CartController::class, 'decrease'])->name('decreaseCart');
 
 Route::get('/direct-buy/{banner_id}', [CartController::class, 'instantCart'])->name('instantCart');
 
