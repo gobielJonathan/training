@@ -44,7 +44,10 @@ class CartController extends Controller
             'total' => (int)$c->total * (int) $t->price
         ]);
         }
-        return null;
+        return response()->json([
+            'status' => 'failed',
+            'total' => (int)$c->total * (int) $t->price
+        ]);;
     }
 
     public function buy(Request $request, $banner_id)
