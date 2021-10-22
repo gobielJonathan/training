@@ -17,4 +17,9 @@ class StimulusMap extends Model
         return $this->belongsTo(Stimulus::class,'stimulus_id');
     }
 
+    public function StimulusOnGoing(){
+        $now = date("Y-m-d");
+        return $this->Stimulus()->whereDate("start", '>=',$now )->first();
+    }
+
 }
