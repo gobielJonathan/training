@@ -18,11 +18,11 @@
                        <div class="d-flex">
                            <div class="col-md-12 col-lg-8">
                                @if(isset($item->user->stimulus_map_on_going))
-                                <img src="{{$item->user->stimulus_map_on_going->stimulus->training->image}}" class="box-rounded" alt="banner-thumbnail"
-                                style="width: 400px;height: 400px;">
+                                <img src="{{$item->user->stimulus_map_on_going->stimulus->training->image}}" class="box-rounded w-100 h-100" alt="banner-thumbnail"
+                                style="max-height:500px">
                             @else
-                                <img src="{{$item->training->image}}" class="box-rounded" alt="banner-thumbnail"
-                                style="width: 400px;height: 400px;">
+                                <img src="{{$item->training->image}}" class="box-rounded w-100 h-100" alt="banner-thumbnail"
+                                style="max-height:500px">
                             @endif
                            </div>
                            <div class="col-md-12 col-lg-4">
