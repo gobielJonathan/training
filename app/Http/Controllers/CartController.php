@@ -15,7 +15,7 @@ class CartController extends Controller
     public function index()
     {
         $carts = Cart::with(['User.StimulusMap' => function($query){
-            $query->whereHas("StimulusOnGoing")->with('Training');
+            $query->with(['StimulusOnGoing.Training'])->whereHas("StimulusOnGoing");
         }, 'Training'])->where('user_id', Auth::id())->get();
         return (json_encode($carts));
         return view('cart', compact('carts'));
