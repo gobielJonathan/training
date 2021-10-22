@@ -17,7 +17,6 @@
                    <div class="col-md-12 col-lg-10">
                        <div class="d-flex">
                            <div class="col-md-12 col-lg-8">
-                               {{dd($item->User->StimulusMapOnGoing)}}
                                @if(isset($item->User->StimulusMapOnGoing))
                                 <img src="{{$item->User->StimulusMapOnGoing->stimulus->training->image}}" class="box-rounded w-100 h-100" alt="banner-thumbnail"
                                 style="max-height:500px">
