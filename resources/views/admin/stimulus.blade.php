@@ -38,7 +38,9 @@
                     <div class="form-group">
                         <select name="training_id" class="form-control">
                             @foreach($training as $t) 
-                                <option value="{{$t->id}}">{{$t->title}}</option>
+                                <option value="{{$t->id}}">
+                                    <img src="{{$t->image}}" alt="{{$t->title}}">
+                                </option>
                             @endforeach
                         </select>
                     </div>
