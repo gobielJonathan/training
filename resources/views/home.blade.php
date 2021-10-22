@@ -22,7 +22,7 @@
     }
 
     .nav-label a {
-        color: "black"  !important;
+        color: black  !important;
     }
 
     nav .btn-collapse{
