@@ -32,8 +32,6 @@ class CartController extends Controller
             $c = new Cart;
             $c->training_id = $banner_id;
             $c->user_id = Auth::id();
-        } else {
-            $c->total++;
         }
         $c->save();
         return redirect()->route('seeCart');
