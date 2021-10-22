@@ -130,7 +130,7 @@
             url :`/cart/add/${id}`,
             method : "POST",
             headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                'X-CSRF-TOKEN': "{{@csrf}}"
             }
         }).then(res => console.log(res))
     })
