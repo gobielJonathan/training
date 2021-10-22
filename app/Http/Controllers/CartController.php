@@ -27,7 +27,7 @@ class CartController extends Controller
         $c->total++;
         $c->save();
         $t = Training::find($training_id);
-        return json_encode([
+        return response()->json([
             'status' => 'ok',
             'total' => (int)$c->total * (int) $t->price
         ]);
@@ -39,7 +39,7 @@ class CartController extends Controller
             $c->total--;
         $c->save();
  $t = Training::find($training_id);
-        return json_encode([
+        return response()->json([
             'status' => 'ok',
             'total' => (int)$c->total * (int) $t->price
         ]);
