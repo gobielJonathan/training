@@ -144,7 +144,7 @@
         }).then(res => {
             if(res?.status == "ok"){
                 const {total} = res
-                $(".text-price").text(total)
+                $(".text-price").text(`Rp. ${total}`)
                 updateValueQty(id, true)
             }
         })
@@ -163,7 +163,7 @@
 
             if(res?.status == "ok"){
                 const {total} = res
-                $(".text-price").text(total)
+                $(".text-price").text(`Rp. ${total}`)
                 updateValueQty(id)
             }
         })
