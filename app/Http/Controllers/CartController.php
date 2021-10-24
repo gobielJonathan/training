@@ -22,14 +22,26 @@ class CartController extends Controller
         return view('cart', compact('carts'));
     }
 
+    function getLatestTotalCart(){ 
+ $carts = Cart::where("user_id", Auth::id())->get();
+        $total = 0;
+
+        foreach ($carts as $value) {
+            $t = Training::find($value->training_id);
+            $total += (int)$value->total * (int) $t->price;
+        }
+
+return $total;
+    }
+
     public function add(Request $request, $id, $training_id){
         $c = Cart::find($id);
         $c->total++;
         $c->save();
-        $t = Training::find($training_id);
+
         return response()->json([
             'status' => 'ok',
-            'total' => (int)$c->total * (int) $t->price
+            'total' => getLatestTotalCart()
         ]);
     }
 
@@ -41,7 +53,7 @@ class CartController extends Controller
  $t = Training::find($training_id);
         return response()->json([
             'status' => 'ok',
-            'total' => (int)$c->total * (int) $t->price
+            'total' => getLatestTotalCart()
         ]);
         }
         return response()->json([
