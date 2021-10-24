@@ -22,7 +22,7 @@
   },
   "step": [{
     "@type": "HowToStep",
-    "text": "Tahap 1. Calon peserta mendaftarkan diri dengan membuat akun (sign up) pada website: https://www.pelatihandaringeksperimen.com/auth/login"
+    "text": "Tahap 1. Calon peserta mendaftarkan diri dengan membuat akun (sign up) pada website: https://www.pelatihandaringeksperimen.com/auth/register"
   },{
     "@type": "HowToStep",
     "text": "Tahap 2. Calon peserta memasuki (sign in) laman pendaftaran pada website: https://www.pelatihandaringeksperimen.com melalui akun masing-masing."
