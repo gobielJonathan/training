@@ -10,8 +10,8 @@
     @yield('head.meta')
     <title>Hadirilah Pelatihan Daring Eksperimen Abad Ini</title>
 
-    <link rel="preload" as="stylesheet" href="{{asset('/assets/css/bootstrap.min.css')}}">
-    <link rel="preload" as="stylesheet" href="{{asset('/assets/icons/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="preload" as="style" href="{{asset('/assets/css/bootstrap.min.css')}}">
+    <link rel="preload" as="style" href="{{asset('/assets/icons/font-awesome/css/font-awesome.min.css')}}">
 
     <link rel="icon" href="{{asset('favicon.ico')}}" type="image/gif" sizes="16x16">
 
