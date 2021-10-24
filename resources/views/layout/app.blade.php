@@ -35,17 +35,20 @@
 
         @font-face {
             src: url('{{asset("/assets/fonts/Poppins/Poppins-SemiBold.ttf")}}');
-            font-family: 'font-bold'
+            font-family: 'font-bold';
+            font-display : 'swap';
         }
 
         @font-face {
             src: url('{{asset("/assets/fonts/Poppins/Poppins-Light.ttf")}}');
-            font-family: 'font-light'
+            font-family: 'font-light';
+            font-display : 'swap';
         }
 
         @font-face {
             src: url('{{asset("/assets/fonts/Poppins/Poppins-Regular.ttf")}}');
-            font-family: 'font-regular'
+            font-family: 'font-regular';
+            font-display : 'swap';
         }
 
         .text-bold {

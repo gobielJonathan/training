@@ -55,32 +55,3 @@
         </button>
     </form>
 </fieldset>
-
-<fieldset>
-  <legend>stimulus</legend>
-  <form action="{{route('addStimulus', [], false)}}" method="post">
-      @csrf
-      <div class="form-group">
-        <input type="text" class="form-control is-invalid" name="name"  aria-describedby="emailHelpId" placeholder="Name">
-      </div>
-      <button class="btn w-100 bg-primary text-white">
-          Add
-      </button>
-  </form>
-</fieldset>
-
-<fieldset>
-  <legend>payment</legend>
-  <form action="{{route('addPayment', [], false)}}" method="post">
-      @csrf
-      <div class="form-group">
-        <input type="text" class="form-control is-invalid" name="name"  aria-describedby="emailHelpId" placeholder="Name">
-      </div>
-      <div class="form-group">
-        <input type="number" class="form-control is-invalid" name="number"  aria-describedby="emailHelpId" placeholder="Number">
-      </div>
-      <button class="btn w-100 bg-primary text-white">
-          Add
-      </button>
-  </form>
-</fieldset>
