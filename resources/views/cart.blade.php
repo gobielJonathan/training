@@ -1,6 +1,14 @@
 @extends('layout.app')
 
 @section('content')
+
+<style>
+    .action-cart-bar {
+        position: absolute;
+        top: 8px;
+        right: 0;
+    }
+</style>
 <div class="container pt-5">
     <h1 class="text-primary">
         @include('layout/back', ['to' => route("home", [], false)])
@@ -12,10 +20,10 @@
 
             @if (count($carts) > 0)
             @foreach ($carts as $item)
-            <div class="p-4 box-shadow box-rounded mb-4 cart-item">
+            <div class="p-4 box-shadow box-rounded mb-4 cart-item position-relative">
                 <div class="row">
                     <div class="col-12">
-                        <div class="d-flex">
+                        <div class="row">
                             <div class="col-md-12 col-lg-7">
                                 @if(isset($item->User->StimulusMapOnGoing))
                                 <img src="{{$item->User->StimulusMapOnGoing->stimulus->training->image}}"
@@ -73,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-2 d-flex">
+                <div class="d-flex action-cart-bar">
                     <form action="{{route('removeCart', ['id'=> $item->id], false)}}" method="post"
                         class="h-fit-content mt-auto ml-auto">
                         @csrf
