@@ -1,5 +1,6 @@
 @extends('layout.app')
 @section('head.meta')
+<meta name="description" content="{{$banner->title}}">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
