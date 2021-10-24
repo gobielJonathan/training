@@ -12,6 +12,8 @@
 
     <link rel="preload" as="style" href="{{asset('/assets/css/bootstrap.min.css')}}">
     <link rel="preload" as="style" href="{{asset('/assets/icons/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="preload" as="script" href="{{asset('/assets/js/jquery.min.js')}}">
+    <link rel="preload" as="script" href="{{asset('/assets/js/bootstrap.min.js')}}">
 
     <link rel="icon" href="{{asset('favicon.ico')}}" type="image/gif" sizes="16x16">
 
