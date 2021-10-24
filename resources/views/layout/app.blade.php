@@ -10,7 +10,7 @@
     @yield('head.meta')
     <title>Hadirilah Pelatihan Daring Eksperimen Abad Ini</title>
 
-    <link rel="stylesheet" href="{{asset('/assets/css/bootstrapmin.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/icons/font-awesome/css/font-awesome.css')}}">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 
