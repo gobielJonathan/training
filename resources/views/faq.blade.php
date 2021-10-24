@@ -59,16 +59,16 @@
   <div id="accordion" class="mt-4">
     @foreach ($datas as $idx => $item)
     <div class="card my-3">
-      <div class="card-header" id="headingOne">
+      <div class="card-header" id="header-{{$idx}}">
         <h5 class="mb-0">
-          <button class="btn btn-link" data-toggle="collapse" data-target="#{{$idx}}" aria-expanded="true"
-            aria-controls="collapseOne">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-{{$idx}}" aria-expanded="true"
+            aria-controls="collapse-{{$idx}}">
             {{$item[0]}}
           </button>
         </h5>
       </div>
 
-      <div id="{{$idx}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div id="collapse-{{$idx}}" class="collapse" aria-labelledby="header-{{$idx}}" data-parent="#accordion">
         <div class="card-body">
           {{$item[1]}}
         </div>
