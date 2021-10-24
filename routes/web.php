@@ -41,7 +41,7 @@ Route::get('/faq', function() {
         ['Tahap 7', 'Calon peserta melakukan konfirmasi telah melakukan pembayaran kepada nomer salah satu contact person yang tertera pada e-poster pada website: https://www.pelatihandaringeksperimen.com'],
         ['Tahap 8', 'Calon peserta menunggu e-ticket yang berisi link dan passcode Zoom untuk mengikuti pelatihan.  E-ticket akan dikirimkan langsung ke email calon peserta yang pembayarannya sudah diverifikasi oleh panitia.'],
     ];
-    return view('faq', compact($datas));
+    return view('faq', compact('datas'));
 })->name('faq');
 
 Route::get('/', [TrainingController::class, 'index'])->name('home');
