@@ -41,7 +41,7 @@ return $total;
 
         return response()->json([
             'status' => 'ok',
-            'total' => getLatestTotalCart()
+            'total' => $this->getLatestTotalCart()
         ]);
     }
 
@@ -53,7 +53,7 @@ return $total;
  $t = Training::find($training_id);
         return response()->json([
             'status' => 'ok',
-            'total' => getLatestTotalCart()
+            'total' => $this->getLatestTotalCart()
         ]);
         }
         return response()->json([
