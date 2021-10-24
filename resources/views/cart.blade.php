@@ -44,7 +44,7 @@
                                 @php
                                 $ls = $item->User->StimulusMapOnGoing->Stimulus;
                                 @endphp
-                                <h3 class="text-bold text-break">{{$ls->training->title}}</h3>
+                                <h3 class="cart-title text-bold text-break">{{$ls->training->title}}</h3>
                                 <h5>{{$ls->name}}</h5>
                                 <p>Rp.{{$ls->training->price}} <br>
                                 <div class="input-group">
@@ -64,7 +64,7 @@
                                     </span>
                                 </div>
                                 @elseif($item->training)
-                                <h3 class="text-bold">{{$item->training->title}}</h3>
+                                <h3 class="cart-title text-bold">{{$item->training->title}}</h3>
                                 <p>Rp.{{$item->training->price}}</p> <br>
                                 <div class="input-group">
                                     <span class="input-group-prepend">
