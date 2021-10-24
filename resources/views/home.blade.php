@@ -1,17 +1,19 @@
 @extends('layout.app')
 @section('head.meta')
-<meta name="description" content="Pelatihan Pengembangan Desain Penelitian Eksperimen untuk Pemula merupakan pelatihan yang diperuntukkan untuk para akademisi dan praktisi yang ingin mengenal metode eksperimen">
+<meta name="description"
+    content="Pelatihan Pengembangan Desain Penelitian Eksperimen untuk Pemula merupakan pelatihan yang diperuntukkan untuk para akademisi dan praktisi yang ingin mengenal metode eksperimen">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{env('APP_URL')}}">
 <meta property="og:title" content="{{$banner->title}}">
-<meta property="og:description" content="Pelatihan Pengembangan Desain Penelitian Eksperimen untuk Pemula merupakan pelatihan yang diperuntukkan untuk para akademisi dan praktisi yang ingin mengenal metode eksperimen">
+<meta property="og:description"
+    content="Pelatihan Pengembangan Desain Penelitian Eksperimen untuk Pemula merupakan pelatihan yang diperuntukkan untuk para akademisi dan praktisi yang ingin mengenal metode eksperimen">
 <meta property="og:image" content="{{env('APP_URL')}}/{{$banner->image}}">
 
 
 <script type="application/ld+json">
-{
+    {
   "@context": "https://schema.org",
   "@type": "Event",
   "name": "{{$banner->title}}",
@@ -23,7 +25,7 @@
 </script>
 @endsection
 <style>
-    nav{
+    nav {
         top: 50%;
         transform: translateY(-50%);
         border-top-right-radius: 6px;
@@ -33,9 +35,10 @@
         padding-bottom: .5rem;
         background-color: white;
         transition: all .2s ease-in-out;
-        box-shadow : 0 0 3px var(--bg-primary);
+        box-shadow: 0 0 3px var(--bg-primary);
     }
-    nav .nav-label{
+
+    nav .nav-label {
         width: 130px;
         min-width: 50px;
         font-size: 1.2rem;
@@ -44,28 +47,27 @@
     }
 
     .nav-label a {
-        color: black  !important;
+        color: black !important;
     }
 
-    nav .btn-collapse{
+    nav .btn-collapse {
         top: 50%;
-        transform: translateY(-50%)  rotate(90deg);
+        transform: translateY(-50%) rotate(90deg);
         right: 10px;
     }
 
-    nav.collapsed .nav-text{
+    nav.collapsed .nav-text {
         visibility: hidden;
     }
 
-    nav.collapsed{
+    nav.collapsed {
         width: 80px;
     }
-
 </style>
 @section('content')
 <div class="w-100 h-100  d-flex">
     @if (isset($banner))
-    <img class="container mx-auto" src="{{$banner->image}}" alt="banner-thumbnail"> 
+    <img class="container mx-auto" src="{{$banner->image}}" alt="banner-thumbnail">
     @endif
 
     <nav class="position-fixed text-black">
@@ -89,7 +91,7 @@
                 </i>
             </div>
             <span class="ml-3 nav-text">
-             <a href="{{route('buyCart', ['banner_id' => $banner->id], false)}}">Cart</a>
+                <a href="{{route('buyCart', ['banner_id' => $banner->id], false)}}">Cart</a>
             </span>
         </div>
         @endif
@@ -134,7 +136,8 @@
         </div>
         @endguest
 
-        <div style="width: 16px">
+        <div class="nav-label">
+            <div style="width: 16px">
                 <i class="fa fa-info-circle" aria-hidden="true"></i>
             </div>
             <span class="ml-3 nav-text">
@@ -151,11 +154,11 @@
 @endsection
 
 @section('script')
-    <script>
-        $(document).ready(function () {
+<script>
+    $(document).ready(function () {
             $(".btn-collapse").click(function () {
                 $('nav').toggleClass("collapsed")
             })
         })
-    </script>
+</script>
 @endsection
