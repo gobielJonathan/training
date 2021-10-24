@@ -9,6 +9,12 @@
         right: 8px;
     }
 
+    .summary-cart {
+        align-items: self-start;
+        position: sticky;
+        top: 30px;
+    }
+
     @media screen and (max-width : 425px) {
         .cart-title {
             margin-top: 10px;
@@ -104,7 +110,7 @@
 
 
         </div>
-        <div class="col-md-12 col-lg-3">
+        <div class="col-md-12 col-lg-3 summary-cart">
             @php
             $total_price = 0;
             foreach ($carts as $item) {
