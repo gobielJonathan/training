@@ -31,7 +31,17 @@ Route::get("/user/dump", function(){
 
 Route::get('/as', [AdminController::class, 'index']);
 Route::get('/faq', function() {
-    return view('faq');
+    $datas = [
+        ['Tahap 1', 'Calon peserta mendaftarkan diri dengan membuat akun (sign up) pada website: https://www.pelatihandaringeksperimen.com/auth/login'],
+        ['Tahap 2', 'Calon peserta memasuki (sign in) laman pendaftaran pada website: https://www.pelatihandaringeksperimen.com melalui akun masing-masing.'],
+        ['Tahap 3', 'Calon peserta memilih fitur: yang terletak pada sisi kiri tengah laman pendaftaran website, apabila ingin langsung melakukan pembayaran.'],
+        ['Tahap 4', 'Calon peserta memilih fitur:  yang terletak pada sisi kiri tengah laman pendaftaran website, apabila tidak ingin langsung melakukan pembayaran.'],
+        ['Tahap 5', 'Calon peserta melakukan pembayaran (checkout) dengan melakukan transfer pada alternatif pilihan bank yang tersedia.'],
+        ['Tahap 6', 'Calon peserta mengunduh bukti transfer pada fitur “upload bukti pembayaran”.'],
+        ['Tahap 7', 'Calon peserta melakukan konfirmasi telah melakukan pembayaran kepada nomer salah satu contact person yang tertera pada e-poster pada website: https://www.pelatihandaringeksperimen.com'],
+        ['Tahap 8', 'Calon peserta menunggu e-ticket yang berisi link dan passcode Zoom untuk mengikuti pelatihan.  E-ticket akan dikirimkan langsung ke email calon peserta yang pembayarannya sudah diverifikasi oleh panitia.'],
+    ];
+    return view('faq', compact($datas));
 })->name('faq');
 
 Route::get('/', [TrainingController::class, 'index'])->name('home');

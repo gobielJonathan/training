@@ -6,11 +6,11 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{env('APP_URL')}}">
 <meta property="og:title" content="FAQ">
-<meta property="og:description" content="{{$banner->title}}">
+<meta property="og:description" content="Tata Cara Pendaftaran dan Pembayaran Keikutsertaan Pelatihan">
 
 
 <script type="application/ld+json">
-{
+    {
   "@context": "https://schema.org/", 
   "@type": "HowTo", 
   "name": "Tata Cara Pendaftaran dan Pembayaran Keikutsertaan Pelatihan",
@@ -44,22 +44,33 @@
   },{
     "@type": "HowToStep",
     "text": "Tahap 8. Calon peserta menunggu e-ticket yang berisi link dan passcode Zoom untuk mengikuti pelatihan.  E-ticket akan dikirimkan langsung ke email calon peserta yang pembayarannya sudah diverifikasi oleh panitia."
-  }]    
+  },]    
 }
 </script>
 @endsection
 
 @section('content')
 <div class="w-100 h-100  d-flex">
+    <h3>Tata Cara Pendaftaran dan Pembayaran Keikutsertaan Pelatihan</h3>
     <div id="accordion">
+        @foreach ($datas as $item)
         <div class="card">
             <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Collapsible Group Item #1
-                </button>
-            </h5>
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#{{$item[0]}}" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        {{$item[0]}}
+                    </button>
+                </h5>
+            </div>
+
+            <div id="{{$item[0]}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    {{$item[1]}}
+                </div>
+            </div>
         </div>
+        @endforeach
     </div>
 </div>
 @endsection
