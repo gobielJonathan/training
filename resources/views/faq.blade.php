@@ -53,7 +53,7 @@
 <div class="pt-5 container">
   <h1 class="text-primary">
     @include('layout/back', ['to' => route("home", [], false)])
-    <span>Cart</span>
+    <span>FAQ</span>
   </h1>
   <h3>Tata Cara Pendaftaran dan Pembayaran Keikutsertaan Pelatihan</h3>
   <div id="accordion" class="mt-4">
