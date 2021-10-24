@@ -10,7 +10,7 @@
     }
 
     .summary-cart {
-        align-items: self-start;
+        align-self: flex-start;
         position: sticky;
         top: 30px;
     }
