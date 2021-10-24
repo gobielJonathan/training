@@ -8,7 +8,7 @@
     </h1>
 
     <div class="row mt-5">
-        <div class="col-md-12 col-lg-8">
+        <div class="col-md-12 col-lg-9">
 
            @if (count($carts) > 0)
            @foreach ($carts as $item)
@@ -83,7 +83,7 @@
 
 
         </div>
-        <div class="col-md-12 col-lg-4">
+        <div class="col-md-12 col-lg-3">
             @php
             $total_price = 0;
             foreach ($carts as $item) {

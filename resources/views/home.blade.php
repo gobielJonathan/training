@@ -1,12 +1,12 @@
 @extends('layout.app')
 @section('head.meta')
-<meta name="description" content="{{$banner->title}}">
+<meta name="description" content="Pelatihan Pengembangan Desain Penelitian Eksperimen untuk Pemula merupakan pelatihan yang diperuntukkan untuk para akademisi dan praktisi yang ingin mengenal metode eksperimen">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{env('APP_URL')}}">
 <meta property="og:title" content="{{$banner->title}}">
-<meta property="og:description" content="{{$banner->title}}">
+<meta property="og:description" content="Pelatihan Pengembangan Desain Penelitian Eksperimen untuk Pemula merupakan pelatihan yang diperuntukkan untuk para akademisi dan praktisi yang ingin mengenal metode eksperimen">
 <meta property="og:image" content="{{env('APP_URL')}}/{{$banner->image}}">
 
 
@@ -112,6 +112,14 @@
             </span>
         </div>
         @endif
+
+        <div style="width: 16px">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+            </div>
+            <span class="ml-3 nav-text">
+                <a href="{{route('faq', [], false)}}">FAQ</a>
+            </span>
+        </div>
 
         <div class="nav-label">
             <div style="width: 16px">

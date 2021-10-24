@@ -30,6 +30,9 @@ Route::get("/user/dump", function(){
 });
 
 Route::get('/as', [AdminController::class, 'index']);
+Route::get('/faq', function() {
+    return view('faq');
+})->name('faq');
 
 Route::get('/', [TrainingController::class, 'index'])->name('home');
 Route::get('/home', [TrainingController::class, 'index']);
