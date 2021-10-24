@@ -11,6 +11,7 @@
     <title>Hadirilah Pelatihan Daring Eksperimen Abad Ini</title>
 
     <link rel="stylesheet" href="{{asset('/assets/css/bootstrap.min.css')}}">
+<link rel="icon" href="{{asset('favicon.ico')}}" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="{{asset('/assets/icons/font-awesome/css/font-awesome.css')}}">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 
