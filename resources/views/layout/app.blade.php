@@ -15,11 +15,11 @@
 
     <link rel="icon" href="{{asset('favicon.ico')}}" type="image/gif" sizes="16x16">
 
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 
-    <script async src="{{asset('/assets/js/axios.min.js')}}"></script>
-    <script async src="{{asset('/assets/js/jquery.min.js')}}"></script>
-    <script async src="{{asset('/assets/js/bootstrap.min.js')}}"></script>
+    <script defer src="{{asset('/assets/js/axios.min.js')}}"></script>
+    <script defer src="{{asset('/assets/js/jquery.min.js')}}"></script>
+    <script defer src="{{asset('/assets/js/bootstrap.min.js')}}"></script>
 
     <style>
         :root {
