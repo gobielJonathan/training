@@ -10,16 +10,14 @@
     @yield('head.meta')
     <title>Hadirilah Pelatihan Daring Eksperimen Abad Ini</title>
 
-    <link rel="preload" as="style" href="{{asset('/assets/css/bootstrap.min.css')}}">
-    <link rel="preload" as="style" href="{{asset('/assets/icons/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="preload" as="script" href="{{asset('/assets/js/jquery.min.js')}}">
-    <link rel="preload" as="script" href="{{asset('/assets/js/bootstrap.min.js')}}">
-
+    <link rel="stylesheet" href="{{asset('/assets/css/bootstrap.min.css')}}">
     <link rel="icon" href="{{asset('favicon.ico')}}" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="{{asset('/assets/icons/font-awesome/css/font-awesome.css')}}">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 
-    <script async src="{{asset('/assets/js/axios.min.js')}}"></script>
-    <script defer src="{{asset('/assets/js/jquery.min.js')}}"></script>
-    <script defer src="{{asset('/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('/assets/js/axios.min.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('/assets/js/bootstrap.min.js')}}"></script>
 
     <style>
         :root {
