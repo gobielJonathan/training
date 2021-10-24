@@ -113,14 +113,6 @@
         </div>
         @endif
 
-        <div style="width: 16px">
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
-            </div>
-            <span class="ml-3 nav-text">
-                <a href="{{route('faq', [], false)}}">FAQ</a>
-            </span>
-        </div>
-
         <div class="nav-label">
             <div style="width: 16px">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -141,6 +133,14 @@
             </span>
         </div>
         @endguest
+
+        <div style="width: 16px">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+            </div>
+            <span class="ml-3 nav-text">
+                <a href="{{route('faq', [], false)}}">FAQ</a>
+            </span>
+        </div>
 
         <button class="btn btn-collapse btn-sm bg-transparent position-absolute">
             <i class="fa fa-bars text-primary" aria-hidden="true"></i>
