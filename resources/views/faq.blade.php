@@ -70,7 +70,7 @@
 
       <div id="collapse-{{$idx}}" class="collapse" aria-labelledby="header-{{$idx}}" data-parent="#accordion">
         <div class="card-body">
-          {{$item[1]}}
+          {!! $item[1] !!}}
         </div>
       </div>
     </div>
