@@ -50,12 +50,12 @@
 @endsection
 
 @section('content')
-<div class="pt-5 container">
+<div class="py-5 container">
   <h1 class="text-primary">
     @include('layout/back', ['to' => route("home", [], false)])
     <span>FAQ</span>
   </h1>
-  <h3>Tata Cara Pendaftaran dan Pembayaran Keikutsertaan Pelatihan</h3>
+  <h3 class="my-5 text-center">Tata Cara Pendaftaran dan Pembayaran Keikutsertaan Pelatihan</h3>
   <div id="accordion" class="mt-4">
     @foreach ($datas as $idx => $item)
     <div class="card my-3">
