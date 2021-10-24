@@ -10,7 +10,7 @@
 
 
 <script type="application/ld+json">
-    {
+  {
   "@context": "https://schema.org/", 
   "@type": "HowTo", 
   "name": "Tata Cara Pendaftaran dan Pembayaran Keikutsertaan Pelatihan",
@@ -50,27 +50,31 @@
 @endsection
 
 @section('content')
-<div class="w-100 h-100  d-flex">
-    <h3>Tata Cara Pendaftaran dan Pembayaran Keikutsertaan Pelatihan</h3>
-    <div id="accordion">
-        @foreach ($datas as $item)
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#{{$item[0]}}" aria-expanded="true"
-                        aria-controls="collapseOne">
-                        {{$item[0]}}
-                    </button>
-                </h5>
-            </div>
+<div class="pt-5 container">
+  <h1 class="text-primary">
+    @include('layout/back', ['to' => route("home", [], false)])
+    <span>Cart</span>
+  </h1>
+  <h3>Tata Cara Pendaftaran dan Pembayaran Keikutsertaan Pelatihan</h3>
+  <div id="accordion" class="mt-4">
+    @foreach ($datas as $idx => $item)
+    <div class="card my-3">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#{{$idx}}" aria-expanded="true"
+            aria-controls="collapseOne">
+            {{$item[0]}}
+          </button>
+        </h5>
+      </div>
 
-            <div id="{{$item[0]}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                    {{$item[1]}}
-                </div>
-            </div>
+      <div id="{{$idx}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+          {{$item[1]}}
         </div>
-        @endforeach
+      </div>
     </div>
+    @endforeach
+  </div>
 </div>
 @endsection

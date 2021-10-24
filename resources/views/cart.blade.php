@@ -10,76 +10,83 @@
     <div class="row mt-5">
         <div class="col-md-12 col-lg-9">
 
-           @if (count($carts) > 0)
-           @foreach ($carts as $item)
-           <div class="p-4 box-shadow box-rounded mb-4 cart-item">
-               <div class="row">
-                   <div class="col-12">
-                       <div class="d-flex">
-                           <div class="col-md-12 col-lg-7">
-                               @if(isset($item->User->StimulusMapOnGoing))
-                                <img src="{{$item->User->StimulusMapOnGoing->stimulus->training->image}}" class="box-rounded w-100 h-100" alt="banner-thumbnail"
-                                style="max-height:500px">
-                            @else
-                                <img src="{{$item->training->image}}" class="box-rounded w-100 h-100" alt="banner-thumbnail"
-                                style="max-height:500px">
-                            @endif
-                           </div>
-                           <div class="col-md-12 col-lg-5">
-                               @if(isset($item->User->StimulusMapOnGoing))
+            @if (count($carts) > 0)
+            @foreach ($carts as $item)
+            <div class="p-4 box-shadow box-rounded mb-4 cart-item">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex">
+                            <div class="col-md-12 col-lg-7">
+                                @if(isset($item->User->StimulusMapOnGoing))
+                                <img src="{{$item->User->StimulusMapOnGoing->stimulus->training->image}}"
+                                    class="box-rounded w-100 h-100" alt="banner-thumbnail" style="max-height:500px">
+                                @else
+                                <img src="{{$item->training->image}}" class="box-rounded w-100 h-100"
+                                    alt="banner-thumbnail" style="max-height:500px">
+                                @endif
+                            </div>
+                            <div class="col-md-12 col-lg-5">
+                                @if(isset($item->User->StimulusMapOnGoing))
                                 @php
-                                    $ls = $item->User->StimulusMapOnGoing->Stimulus;
+                                $ls = $item->User->StimulusMapOnGoing->Stimulus;
                                 @endphp
                                 <h3 class="text-bold text-break">{{$ls->training->title}}</h3>
                                 <h5>{{$ls->name}}</h5>
                                 <p>Rp.{{$ls->training->price}} <br>
                                 <div class="input-group">
                                     <span class="input-group-prepend">
-                                        <button type="button" class="btn btn-sm"  data-type="minus" data-id="{{$item->id}}" data-training="{{$ls->training->id}}">
+                                        <button type="button" class="btn btn-sm" data-type="minus"
+                                            data-id="{{$item->id}}" data-training="{{$ls->training->id}}">
                                             <span class="fa fa-minus"></span>
                                         </button>
                                     </span>
-                                    <input type="text" id="qty-{{$item->id}}" disabled class="rounded form-control input-number" value="{{$item->total}}" min="1">
+                                    <input type="text" id="qty-{{$item->id}}" disabled
+                                        class="rounded form-control input-number" value="{{$item->total}}" min="1">
                                     <span class="input-group-append">
-                                        <button type="button" class="btn btn-sm" data-type="plus" data-id="{{$item->id}}" data-training="{{$ls->training->id}}">
+                                        <button type="button" class="btn btn-sm" data-type="plus"
+                                            data-id="{{$item->id}}" data-training="{{$ls->training->id}}">
                                             <span class="fa fa-plus"></span>
                                         </button>
                                     </span>
                                 </div>
-                               @elseif($item->training)
+                                @elseif($item->training)
                                 <h3 class="text-bold">{{$item->training->title}}</h3>
                                 <p>Rp.{{$item->training->price}}</p> <br>
                                 <div class="input-group">
                                     <span class="input-group-prepend">
-                                        <button type="button" class="btn btn-sm"  data-type="minus" data-id="{{$item->id}}" data-training="{{$item->training->id}}">
+                                        <button type="button" class="btn btn-sm" data-type="minus"
+                                            data-id="{{$item->id}}" data-training="{{$item->training->id}}">
                                             <span class="fa fa-minus"></span>
                                         </button>
                                     </span>
-                                    <input type="text" id="qty-{{$item->id}}" disabled class="rounded form-control input-number" value="{{$item->total}}" min="1">
+                                    <input type="text" id="qty-{{$item->id}}" disabled
+                                        class="rounded form-control input-number" value="{{$item->total}}" min="1">
                                     <span class="input-group-append">
-                                        <button type="button" class="btn btn-sm" data-type="plus" data-id="{{$item->id}}" data-training="{{$item->training->id}}">
+                                        <button type="button" class="btn btn-sm" data-type="plus"
+                                            data-id="{{$item->id}}" data-training="{{$item->training->id}}">
                                             <span class="fa fa-plus"></span>
                                         </button>
                                     </span>
                                 </div>
-                               @endif
-                           </div>
-                       </div>
-                   </div>
-               </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-2 d-flex">
-                       <form action="{{route('removeCart', ['id'=> $item->id], false)}}" method="post" class="h-fit-content mt-auto ml-auto">
-                           @csrf
-                           <button class="btn btn-remove-cart btn-sm bg-transparent">
-                               <i class="fa fa-trash text-secondary" style="font-size: 1.2rem" aria-hidden="true"></i>
-                           </button>
-                       </form>
-                   </div>
-           </div>
-           @endforeach
-           @else
-              @include('layout/empty')
-           @endif
+                    <form action="{{route('removeCart', ['id'=> $item->id], false)}}" method="post"
+                        class="h-fit-content mt-auto ml-auto">
+                        @csrf
+                        <button class="btn btn-remove-cart btn-sm bg-transparent">
+                            <i class="fa fa-trash text-secondary" style="font-size: 1.2rem" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            @endforeach
+            @else
+            @include('layout/empty')
+            @endif
 
 
         </div>
@@ -110,12 +117,12 @@
                 </div>
 
                 @if (count($carts) > 0)
-              <a href="{{route('seePayment', [],false)}}">
-                <button class="mt-3 btn w-100 bg-primary text-white">
-                    Checkout
-                </button>
-            </a>
-              @endif
+                <a href="{{route('seePayment', [],false)}}">
+                    <button class="mt-3 btn w-100 bg-primary text-white">
+                        Checkout
+                    </button>
+                </a>
+                @endif
             </div>
         </div>
     </div>
@@ -124,7 +131,6 @@
 
 @section("script")
 <script>
-
     function updateValueQty(id, increment = false){
         if(increment)
         $(`#qty-${id}`).val(+$(`#qty-${id}`).val() + 1)
@@ -170,4 +176,3 @@
     })
 </script>
 @endsection
-
