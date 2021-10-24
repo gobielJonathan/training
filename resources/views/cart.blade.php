@@ -6,7 +6,13 @@
     .action-cart-bar {
         position: absolute;
         top: 8px;
-        right: 0;
+        right: 8px;
+    }
+
+    @media screen and (max-width : 425px) {
+        .cart-title {
+            margin-top: 10px;
+        }
     }
 </style>
 <div class="container pt-5">
