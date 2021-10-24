@@ -44,14 +44,6 @@
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-control" name="address"  aria-describedby="helpId" placeholder="Full Address">
-        </div>
-
-        <div class="form-group">
-          <input type="text" class="form-control" name="telephone"  aria-describedby="helpId" placeholder="Telephone">
-        </div>
-
-        <div class="form-group">
           <select class="form-control" name="role">
             <option value="{{App\Models\User::ADMIN}}">Admin</option>
             <option value="{{App\Models\User::USER}}">User</option>

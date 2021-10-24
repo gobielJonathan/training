@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{env('APP_NAME')}}</title>
+    <meta name="keywords" content="pelatihan daring, pelatihan eksperimen, pelatihan online, online training, experiment training, online experiment, online experiment training">
 
-    <link rel="stylesheet" href="{{asset("/assets/css/bootstrap.min.css")}}">
-    <link rel="stylesheet" href="{{asset("/assets/icons/font-awesome/css/font-awesome.css")}}">
+    @yield('head.meta')
+    <title>Hadirilah Pelatihan Daring Eksperimen Abad Ini</title>
+
+    <link rel="stylesheet" href="{{asset('/assets/css/bootstrapmin.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/icons/font-awesome/css/font-awesome.css')}}">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 
-    <script src="{{asset("/assets/js/axios.min.js")}}"></script>
-    <script src="{{asset("/assets/js/jquery.min.js")}}"></script>
-    <script src="{{asset("/assets/js/bootstrap.min.js")}}"></script>
+    <script src="{{asset('/assets/js/axios.min.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('/assets/js/bootstrap.min.js')}}"></script>
 
     <style>
         :root {

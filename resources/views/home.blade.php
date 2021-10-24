@@ -1,5 +1,26 @@
 @extends('layout.app')
+@section('head.meta')
 
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{env('APP_URL')}}">
+<meta property="og:title" content="{{$banner->title}}">
+<meta property="og:description" content="{{$banner->title}}">
+<meta property="og:image" content="{{env('APP_URL')}}/{{$banner->image}}">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "{{$banner->title}}",
+  "description": "{{$banner->title}}",
+  "image": "{{env("APP_URL")}}/{{$banner->image}}",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+}
+</script>
+@endsection
 <style>
     nav{
         top: 50%;

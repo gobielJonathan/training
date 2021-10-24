@@ -32,6 +32,7 @@ Route::get("/user/dump", function(){
 Route::get('/as', [AdminController::class, 'index']);
 
 Route::get('/', [TrainingController::class, 'index'])->name('home');
+Route::get('/home', [TrainingController::class, 'index']);
 
 Route::get('/cart', [CartController::class, 'index'])->name('seeCart');
 Route::post('/cart/delete/{id}', [CartController::class, 'remove'])->name('removeCart');
