@@ -15,7 +15,7 @@ class AddDescriptionsToTrainingsTable extends Migration
     {
         Schema::table('trainings', function (Blueprint $table) {
             //
-            $table->string('description');
+            $table->text('description')->default('');
         });
     }
 

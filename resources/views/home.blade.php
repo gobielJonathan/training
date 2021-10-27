@@ -15,7 +15,7 @@
   "@context": "https://schema.org",
   "@type": "Event",
   "name": "{{$banner->title}}",
-  "description": "{{$banner->title}}",
+  "description": "{{$banner->description}}",
   "image": "{{env("APP_URL")}}/{{$banner->image}}",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
