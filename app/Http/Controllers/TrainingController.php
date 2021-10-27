@@ -23,6 +23,7 @@ class TrainingController extends Controller
         $t = new Training;
         $t->title = $request->get('title');
         $t->price = $request->get('price');
+        $t->description = $request->get("description");
         $t->status = Training::ACTIVE;
 
         $image_path = Storage::put('public/training', $request->file('image'));

@@ -1,14 +1,12 @@
 @extends('layout.app')
 @section('head.meta')
-<meta name="description"
-    content="Pelatihan Pengembangan Desain Penelitian Eksperimen untuk Pemula merupakan pelatihan yang diperuntukkan untuk para akademisi dan praktisi yang ingin mengenal metode eksperimen">
+<meta name="description" content="{{$banner->description}}">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{env('APP_URL')}}">
 <meta property="og:title" content="{{$banner->title}}">
-<meta property="og:description"
-    content="Pelatihan Pengembangan Desain Penelitian Eksperimen untuk Pemula merupakan pelatihan yang diperuntukkan untuk para akademisi dan praktisi yang ingin mengenal metode eksperimen">
+<meta property="og:description" content="{{$banner->description}}">
 <meta property="og:image" content="{{env('APP_URL')}}/{{$banner->image}}">
 
 

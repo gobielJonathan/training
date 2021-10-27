@@ -21,7 +21,7 @@
                 <form action="{{route('addTraining',[], false)}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <input type="file" accept="image/*" class="form-control-file" name="image"  placeholder=""
+                        <input type="file" accept="image/*" class="form-control-file" name="image" placeholder=""
                             aria-describedby="fileHelpId">
 
                         <p class="form-text text-muted">
@@ -31,13 +31,18 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" name="title"  aria-describedby="helpId"
+                        <input type="text" class="form-control" name="title" aria-describedby="helpId"
                             placeholder="Title">
                     </div>
 
                     <div class="form-group">
-                        <input type="number" class="form-control" name="price"  aria-describedby="helpId"
+                        <input type="number" class="form-control" name="price" aria-describedby="helpId"
                             placeholder="Price">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="description" aria-describedby="helpId"
+                            placeholder="Description">
                     </div>
 
                     <button type="submit" class="btn btn-sm bg-primary w-100 text-white">Submit</button>

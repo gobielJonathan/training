@@ -5,10 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords" content="pelatihan daring, pelatihan eksperimen, pelatihan online, online training, experiment training, online experiment, online experiment training">
+    <meta name="keywords"
+        content="pelatihan daring, pelatihan eksperimen, pelatihan online, online training, experiment training, online experiment, online experiment training">
 
     @yield('head.meta')
-    <title>Hadirilah Pelatihan Daring Eksperimen Abad Ini</title>
+    <title>
+        @if(isset($banner))
+        {{$banner->title}}
+        @else
+        Hadirilah Pelatihan Daring Eksperimen Abad Ini
+        @endif
+    </title>
 
     <link rel="stylesheet" href="{{asset('/assets/css/bootstrap.min.css')}}">
     <link rel="icon" href="{{asset('favicon.ico')}}" type="image/gif" sizes="16x16">
@@ -36,19 +43,19 @@
         @font-face {
             src: url('{{asset("/assets/fonts/Poppins/Poppins-SemiBold.ttf")}}');
             font-family: 'font-bold';
-            font-display : 'swap';
+            font-display: 'swap';
         }
 
         @font-face {
             src: url('{{asset("/assets/fonts/Poppins/Poppins-Light.ttf")}}');
             font-family: 'font-light';
-            font-display : 'swap';
+            font-display: 'swap';
         }
 
         @font-face {
             src: url('{{asset("/assets/fonts/Poppins/Poppins-Regular.ttf")}}');
             font-family: 'font-regular';
-            font-display : 'swap';
+            font-display: 'swap';
         }
 
         .text-bold {
@@ -77,19 +84,20 @@
         .box-rounded {
             border-radius: 7.6px;
         }
-        .box-top-left-rounded{
+
+        .box-top-left-rounded {
             border-top-left-radius: 7.6px;
         }
 
-        .box-top-right-rounded{
+        .box-top-right-rounded {
             border-top-right-radius: 7.6px;
         }
 
-        .box-bottom-left-rounded{
+        .box-bottom-left-rounded {
             border-bottom-left-radius: 7.6px;
         }
 
-        .box-bottom-right-rounded{
+        .box-bottom-right-rounded {
             border-bottom-right-radius: 7.6px;
         }
 
@@ -99,14 +107,15 @@
         }
 
         .h-fit-content {
-            height:  fit-content
+            height: fit-content
         }
 
-        .nav-link.active{
+        .nav-link.active {
             background-color: var(--bg-primary) !important;
             color: white !important;
         }
-        img{
+
+        img {
             object-fit: contain;
             user-select: none;
         }
@@ -116,7 +125,7 @@
             text-decoration: none;
         }
 
-        .center-h-v{
+        .center-h-v {
             display: grid;
             place-items: center;
         }
@@ -129,4 +138,5 @@
 
 
 @yield('script')
+
 </html>
