@@ -19,6 +19,7 @@ class CartController extends Controller
         ->where('user_id', Auth::id())
         ->get();
         // return (json_encode($carts));
+        dd($carts);
         return view('cart', compact('carts'));
     }
 

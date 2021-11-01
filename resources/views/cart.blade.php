@@ -41,7 +41,7 @@
                                 <img src="{{$item->User->StimulusMapOnGoing->stimulus->training->image}}"
                                     class="box-rounded w-100 h-100" alt="banner-thumbnail" style="max-height:500px">
                                 @else
-                                <img src="{{$item->Training->image}}" class="box-rounded w-100 h-100"
+                                <img src="{{$item->training->image}}" class="box-rounded w-100 h-100"
                                     alt="banner-thumbnail" style="max-height:500px">
                                 @endif
                             </div>
@@ -70,12 +70,12 @@
                                     </span>
                                 </div>
                                 @elseif($item->training)
-                                <h3 class="cart-title text-bold">{{$item->Training->title}}</h3>
-                                <p>Rp.{{$item->Training->price}}</p> <br>
+                                <h3 class="cart-title text-bold">{{$item->training->title}}</h3>
+                                <p>Rp.{{$item->training->price}}</p> <br>
                                 <div class="input-group">
                                     <span class="input-group-prepend">
                                         <button type="button" class="btn btn-sm" data-type="minus"
-                                            data-id="{{$item->id}}" data-training="{{$item->Training->id}}">
+                                            data-id="{{$item->id}}" data-training="{{$item->training->id}}">
                                             <span class="fa fa-minus"></span>
                                         </button>
                                     </span>
@@ -83,7 +83,7 @@
                                         class="rounded form-control input-number" value="{{$item->total}}" min="1">
                                     <span class="input-group-append">
                                         <button type="button" class="btn btn-sm" data-type="plus"
-                                            data-id="{{$item->id}}" data-training="{{$item->Training->id}}">
+                                            data-id="{{$item->id}}" data-training="{{$item->training->id}}">
                                             <span class="fa fa-plus"></span>
                                         </button>
                                     </span>
