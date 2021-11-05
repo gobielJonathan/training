@@ -24,10 +24,12 @@
 @endsection
 <style>
     nav {
-        top: 50%;
-        transform: translateY(-50%);
+        bottom: 0;
+        left: 100%;
+        width: 100%;
+        border-radius: 0;
         border-top-right-radius: 6px;
-        border-bottom-right-radius: 6px;
+        border-top-left-radius: 6px;
         padding-left: .9rem;
         padding-top: 1rem;
         padding-bottom: .5rem;
@@ -41,7 +43,7 @@
         min-width: 50px;
         font-size: 1.2rem;
         display: flex;
-        margin-bottom: .5rem;
+        flex-direction: column;
     }
 
     .nav-label a {
@@ -63,19 +65,19 @@
     }
 </style>
 @section('content')
-<div class="w-100 h-100  d-flex">
+<div class="w-100 h-100 d-flex container position-relative flex-column">
     @if (isset($banner))
-    <img class="container mx-auto" src="{{$banner->image}}" alt="banner-thumbnail">
+    <img class="mx-auto w-100" src="{{$banner->image}}" alt="banner-thumbnail">
     @endif
 
-    <nav class="position-fixed text-black">
+    <nav class="position-absolute text-black">
         @if (isset($banner))
         <div class="nav-label">
             <div style="width: 16px">
                 <i class="fa fa-plus" aria-hidden="true"></i>
             </div>
-            <span class="ml-3 nav-text">
-                <a href="{{route('instantCart', ['banner_id' => $banner->id], false)}}">Buy</a>
+            <span class="nav-text">
+                <a href="{{route('instantCart', ['banner_id' => $banner->id], false)}}">Beli</a>
             </span>
         </div>
         @endif
@@ -88,8 +90,8 @@
                 <i class="fa fa-shopping-cart" aria-hidden="true">
                 </i>
             </div>
-            <span class="ml-3 nav-text">
-                <a href="{{route('buyCart', ['banner_id' => $banner->id], false)}}">Cart</a>
+            <span class="nav-text">
+                <a href="{{route('buyCart', ['banner_id' => $banner->id], false)}}">Keranjang</a>
             </span>
         </div>
         @endif
@@ -97,7 +99,7 @@
             <div style="width: 16px">
                 <i class="fa fa-user" aria-hidden="true"></i>
             </div>
-            <span class="ml-3 nav-text">
+            <span class="nav-text">
                 <a href="{{route('seeUser', [], false)}}">User</a>
             </span>
         </div>
@@ -107,7 +109,7 @@
             <div style="width: 16px">
                 <i class="fa fa-book" aria-hidden="true"></i>
             </div>
-            <span class="ml-3 nav-text">
+            <span class="nav-text">
                 <a href="{{route('showPageAdmin', [], false)}}">Admin</a>
             </span>
         </div>
@@ -117,8 +119,8 @@
             <div style="width: 16px">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
             </div>
-            <span class="ml-3 nav-text">
-                <a href="{{route('logout', [], false)}}">Logout</a>
+            <span class="nav-text">
+                <a href="{{route('logout', [], false)}}">Keluar</a>
             </span>
         </div>
         @endauth
@@ -128,8 +130,8 @@
             <div style="width: 16px">
                 <i class="fa fa-user" aria-hidden="true"></i>
             </div>
-            <span class="ml-3 nav-text">
-                <a href="{{route('login', [], false)}}">Sign In</a>
+            <span class="nav-text">
+                <a href="{{route('login', [], false)}}">Masuk</a>
             </span>
         </div>
         @endguest
@@ -138,8 +140,8 @@
             <div style="width: 16px">
                 <i class="fa fa-info-circle" aria-hidden="true"></i>
             </div>
-            <span class="ml-3 nav-text">
-                <a href="{{route('faq', [], false)}}">FAQ</a>
+            <span class="nav-text">
+                <a href="{{route('faq', [], false)}}">Tanya Jawab</a>
             </span>
         </div>
 

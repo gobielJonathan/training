@@ -129,7 +129,7 @@
 
                 <div class="row">
                     <div class="col-4">
-                        <h5 class="text-bold">Total Price</h5>
+                        <h5 class="text-bold">Total Harga</h5>
                     </div>
                     <div class="col-8">
                         <h5 class="text-bold text-right text-price">Rp.{{$total_price}}</h5>
@@ -139,7 +139,7 @@
                 @if (count($carts) > 0)
                 <a href="{{route('seePayment', [],false)}}">
                     <button class="mt-3 btn w-100 bg-primary text-white">
-                        Checkout
+                        Selesaikan Pembayaran
                     </button>
                 </a>
                 @endif

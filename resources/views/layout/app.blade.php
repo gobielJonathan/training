@@ -129,6 +129,11 @@
             display: grid;
             place-items: center;
         }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+        }
     </style>
 </head>
 

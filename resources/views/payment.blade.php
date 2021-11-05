@@ -25,22 +25,22 @@
         <div class="mt-5">
             <div class="input-group input-group-lg mb-3 bg-white box-shadow box-rounded">
                 <div class="form-control border-0">
-                    <label for="payment" class="text-secondary">Upload Payment Transfer</label>
+                    <label for="payment" class="text-secondary">Unggah Bukti Pembayaran</label>
                     <input type="file" accept="image/*" name="payment_image" class="d-none" id="payment">
                 </div>
                 <div class="input-group-append">
-                    <button type="submit" class="btn border-left text-secondary">Pay</button>
+                    <button type="submit" class="btn border-left text-secondary">Bayar</button>
                 </div>
             </div>
             @error('payment_image')
-                <small class="text-danger">{{$message}}</small>
+            <small class="text-danger">{{$message}}</small>
             @enderror
         </div>
 
         @foreach ($payments as $item)
         <div class="p-4 box-shadow box-rounded mt-4 d-flex align-items-center">
-            <div>   
-                <input type="radio" name="payment_type_id" value="{{$item->id}}" >
+            <div>
+                <input type="radio" name="payment_type_id" value="{{$item->id}}">
             </div>
             <div class="w-100 ml-3">
                 <div class="payment-header">
@@ -48,12 +48,12 @@
                         <h5 class="text-bold">{{$item->payment_name}}</h5>
                     </div>
                 </div>
-    
+
                 <hr>
-    
+
                 <div class="payment-content">
                     <div class="container-fluid">
-                        <p>Account Number</p>
+                        <p>Nomor Akun</p>
                         <p class="text-bold">{{$item->payment_number}}</p>
                     </div>
                 </div>
