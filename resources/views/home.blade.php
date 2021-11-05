@@ -38,6 +38,7 @@
         box-shadow: 0 0 3px var(--bg-primary);
         white-space : nowrap;
         overflow : auto;
+        height : 68px;
     }
 
     nav .nav-label {
@@ -65,11 +66,17 @@
     nav.collapsed {
         width: 80px;
     }
+    
+    .container-custom {
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+        }
 </style>
 @section('content')
-<div class="w-100 h-100 d-flex container position-relative flex-column">
+<div class="w-100 h-100 d-flex container-custom flex-column">
     @if (isset($banner))
-    <img class="mx-auto w-100 h-100" src="{{$banner->image}}" alt="banner-thumbnail">
+    <img class="w-100 h-100" src="{{$banner->image}}" alt="banner-thumbnail">
     @endif
 
     <nav class="d-flex flex-row text-black">
@@ -106,26 +113,6 @@
             </span>
         </div>
 
-        @if (Auth::user()->isAdmin())
-        <div class="nav-label col">
-            <div style="width: 16px">
-                <i class="fa fa-book" aria-hidden="true"></i>
-            </div>
-            <span class="nav-text">
-                <a href="{{route('showPageAdmin', [], false)}}">Admin</a>
-            </span>
-        </div>
-        @endif
-
-        <div class="nav-label col">
-            <div style="width: 16px">
-                <i class="fa fa-sign-out" aria-hidden="true"></i>
-            </div>
-            <span class="nav-text">
-                <a href="{{route('logout', [], false)}}">Keluar</a>
-            </span>
-        </div>
-        @endauth
 
         @guest
         <div class="nav-label col">
@@ -147,9 +134,27 @@
             </span>
         </div>
 
-        <button class="btn btn-collapse btn-sm bg-transparent position-absolute">
-            <i class="fa fa-bars text-primary" aria-hidden="true"></i>
-        </button>
+        @if (Auth::user()->isAdmin())
+        <div class="nav-label col">
+            <div style="width: 16px">
+                <i class="fa fa-book" aria-hidden="true"></i>
+            </div>
+            <span class="nav-text">
+                <a href="{{route('showPageAdmin', [], false)}}">Admin</a>
+            </span>
+        </div>
+        @endif
+
+        <div class="nav-label col">
+            <div style="width: 16px">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </div>
+            <span class="nav-text">
+                <a href="{{route('logout', [], false)}}">Keluar</a>
+            </span>
+        </div>
+        @endauth
+        
     </nav>
 
 </div>
