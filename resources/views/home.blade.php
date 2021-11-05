@@ -36,14 +36,16 @@
         background-color: white;
         transition: all .2s ease-in-out;
         box-shadow: 0 0 3px var(--bg-primary);
+        white-space : nowrap;
+        overflow : auto;
     }
 
     nav .nav-label {
-        width: 130px;
-        min-width: 50px;
-        font-size: 1.2rem;
+        font-size: 1rem;
         display: flex;
         flex-direction: column;
+        align-items : center;
+        text-align:center;
     }
 
     .nav-label a {
@@ -67,12 +69,12 @@
 @section('content')
 <div class="w-100 h-100 d-flex container position-relative flex-column">
     @if (isset($banner))
-    <img class="mx-auto w-100" src="{{$banner->image}}" alt="banner-thumbnail">
+    <img class="mx-auto w-100 h-100" src="{{$banner->image}}" alt="banner-thumbnail">
     @endif
 
-    <nav class="position-absolute text-black">
+    <nav class="d-flex flex-row text-black">
         @if (isset($banner))
-        <div class="nav-label">
+        <div class="nav-label col">
             <div style="width: 16px">
                 <i class="fa fa-plus" aria-hidden="true"></i>
             </div>
@@ -85,7 +87,7 @@
 
         @auth
         @if (isset($banner))
-        <div class="nav-label">
+        <div class="nav-label col">
             <div style="width: 16px">
                 <i class="fa fa-shopping-cart" aria-hidden="true">
                 </i>
@@ -95,7 +97,7 @@
             </span>
         </div>
         @endif
-        <div class="nav-label">
+        <div class="nav-label col">
             <div style="width: 16px">
                 <i class="fa fa-user" aria-hidden="true"></i>
             </div>
@@ -105,7 +107,7 @@
         </div>
 
         @if (Auth::user()->isAdmin())
-        <div class="nav-label">
+        <div class="nav-label col">
             <div style="width: 16px">
                 <i class="fa fa-book" aria-hidden="true"></i>
             </div>
@@ -115,7 +117,7 @@
         </div>
         @endif
 
-        <div class="nav-label">
+        <div class="nav-label col">
             <div style="width: 16px">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
             </div>
@@ -126,7 +128,7 @@
         @endauth
 
         @guest
-        <div class="nav-label">
+        <div class="nav-label col">
             <div style="width: 16px">
                 <i class="fa fa-user" aria-hidden="true"></i>
             </div>
@@ -136,7 +138,7 @@
         </div>
         @endguest
 
-        <div class="nav-label">
+        <div class="nav-label col">
             <div style="width: 16px">
                 <i class="fa fa-info-circle" aria-hidden="true"></i>
             </div>
