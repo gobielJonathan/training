@@ -28,8 +28,8 @@
         left: 100%;
         width: 100%;
         border-radius: 0;
-        border-top-right-radius: 6px;
-        border-top-left-radius: 6px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
         padding-left: .9rem;
         padding-top: 1rem;
         padding-bottom: .5rem;
