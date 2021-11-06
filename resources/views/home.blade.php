@@ -38,7 +38,7 @@
         box-shadow: 0 0 3px var(--bg-primary);
         white-space : nowrap;
         overflow : auto;
-        height : 68px;
+        height : 80px;
     }
 
     nav .nav-label {
