@@ -70,7 +70,7 @@
 @section('content')
 <div class="container-custom">
     @if (isset($banner))
-    <img class="w-100 h-100 mb-3" src="{{$banner->image}}" alt="banner-thumbnail">
+    <img class="w-100 h-100 mb-3 object-fill" src="{{$banner->image}}" alt="banner-thumbnail">
     @endif
 
     <nav class="d-flex p-3 flex-row text-black">
