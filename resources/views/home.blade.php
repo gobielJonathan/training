@@ -28,15 +28,11 @@
         border-radius: 0;
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
-        padding-left: .9rem;
-        padding-top: 1rem;
-        padding-bottom: .5rem;
         background-color: white;
         transition: all .2s ease-in-out;
         box-shadow: 0 0 3px var(--bg-primary);
         white-space: nowrap;
         overflow: auto;
-        height: 80px;
     }
 
     nav .nav-label {
@@ -77,7 +73,7 @@
     <img class="w-100 h-100 mb-3" src="{{$banner->image}}" alt="banner-thumbnail">
     @endif
 
-    <nav class="d-flex flex-row text-black">
+    <nav class="d-flex p-3 flex-row text-black">
         @if (isset($banner))
         <div class="nav-label col">
             <div>
