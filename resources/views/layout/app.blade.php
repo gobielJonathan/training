@@ -129,6 +129,10 @@
             display: grid;
             place-items: center;
         }
+
+        .object-fill {
+            object-fit: fill;
+        }
     </style>
 </head>
 
