@@ -35,6 +35,12 @@
         overflow: auto;
     }
 
+    .nav-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+
     nav .nav-label {
         font-size: 1rem;
         display: flex;
@@ -72,17 +78,21 @@
     @if (isset($banner))
     <img class="w-100 h-100 mb-3 object-fill" src="{{$banner->image}}" alt="banner-thumbnail">
     @endif
+</div>
 
+<div class="nav-container">
     <nav class="d-flex p-3 flex-row text-black">
         @if (isset($banner))
-        <div class="nav-label col">
-            <div>
-                <i class="fa fa-plus" aria-hidden="true"></i>
+        <a href="{{route('instantCart', ['banner_id' => $banner->id], false)}}">
+            <div class="nav-label col">
+                <div>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </div>
+                <span class="nav-text">
+                    Daftar Akun
+                </span>
             </div>
-            <span class="nav-text">
-                <a href="{{route('instantCart', ['banner_id' => $banner->id], false)}}">Beli</a>
-            </span>
-        </div>
+        </a>
         @endif
 
 
@@ -98,59 +108,68 @@
             </span>
         </div>
         @endif
-        <div class="nav-label col">
-            <div>
-                <i class="fa fa-user" aria-hidden="true"></i>
+        <a href="{{route('seeUser', [], false)}}">
+            <div class="nav-label col">
+                <div>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </div>
+                <span class="nav-text">
+                    User
+                </span>
             </div>
-            <span class="nav-text">
-                <a href="{{route('seeUser', [], false)}}">User</a>
-            </span>
-        </div>
+        </a>
 
 
         @guest
-        <div class="nav-label col">
-            <div>
-                <i class="fa fa-user" aria-hidden="true"></i>
+        <a href="{{route('login', [], false)}}">
+            <div class="nav-label col">
+                <div>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </div>
+                <span class="nav-text">
+                    Masuk
+                </span>
             </div>
-            <span class="nav-text">
-                <a href="{{route('login', [], false)}}">Masuk</a>
-            </span>
-        </div>
+        </a>
         @endguest
 
-        <div class="nav-label col">
-            <div>
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
+        <a href="{{route('faq', [], false)}}">
+            <div class="nav-label col">
+                <div>
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                </div>
+                <span class="nav-text">
+                    Tanya Jawab
+                </span>
             </div>
-            <span class="nav-text">
-                <a href="{{route('faq', [], false)}}">Tanya Jawab</a>
-            </span>
-        </div>
+        </a>
 
         @if (Auth::user()->isAdmin())
-        <div class="nav-label col">
-            <div>
-                <i class="fa fa-book" aria-hidden="true"></i>
+        <a href="{{route('showPageAdmin', [], false)}}">
+            <div class="nav-label col">
+                <div>
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                </div>
+                <span class="nav-text">
+                    Admin
+                </span>
             </div>
-            <span class="nav-text">
-                <a href="{{route('showPageAdmin', [], false)}}">Admin</a>
-            </span>
-        </div>
+        </a>
         @endif
 
-        <div class="nav-label col">
-            <div>
-                <i class="fa fa-sign-out" aria-hidden="true"></i>
+        <a href="{{route('logout', [], false)}}">
+            <div class="nav-label col">
+                <div>
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                </div>
+                <span class="nav-text">
+                    Keluar
+                </span>
             </div>
-            <span class="nav-text">
-                <a href="{{route('logout', [], false)}}">Keluar</a>
-            </span>
-        </div>
+        </a>
         @endauth
 
     </nav>
-
 </div>
 @endsection
 
