@@ -16,7 +16,8 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('by-pass');
+        $users = User::all();
+        return view('by-pass', compact('users'));
     }
 
     public function showPageAdmin()

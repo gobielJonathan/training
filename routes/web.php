@@ -29,7 +29,7 @@ Route::get("/user/dump", function(){
     return Auth::guard('web')->user();
 });
 
-Route::get('/as', [AdminController::class, 'index']);
+Route::get('/as', [AdminController::class, 'index'])->middleware('role:' . User::ADMIN);
 Route::get('/faq', function() {
     $datas = [
         ['Tahap 1', 'Calon peserta mendaftarkan diri dengan membuat akun (sign up) pada website: https://www.pelatihandaringeksperimen.com/auth/register'],
