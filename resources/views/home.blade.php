@@ -39,6 +39,7 @@
         position: fixed;
         bottom: 0;
         left: 0;
+        width: 100%;
     }
 
     nav .nav-label {
@@ -71,19 +72,20 @@
         width: 100%;
         max-width: 500px;
         margin: auto;
+        padding-bottom: 72px;
     }
 </style>
 @section('content')
 <div class="container-custom">
     @if (isset($banner))
-    <img class="w-100 h-100 mb-3 object-fill" src="{{$banner->image}}" alt="banner-thumbnail">
+    <img class="w-100 h-100 mb-3" style="object-fit: contain" src="{{$banner->image}}" alt="banner-thumbnail">
     @endif
 </div>
 
 <div class="nav-container">
-    <nav class="d-flex p-3 flex-row text-black">
+    <nav class="d-flex py-3 flex-row text-black">
         @if (isset($banner))
-        <a href="{{route('instantCart', ['banner_id' => $banner->id], false)}}">
+        <a href="{{route('instantCart', ['banner_id' => $banner->id], false)}}" class="col">
             <div class="nav-label col">
                 <div>
                     <i class="fa fa-plus" aria-hidden="true"></i>
@@ -98,17 +100,19 @@
 
         @auth
         @if (isset($banner))
-        <div class="nav-label col">
-            <div>
-                <i class="fa fa-shopping-cart" aria-hidden="true">
-                </i>
+        <a href="{{route('buyCart', ['banner_id' => $banner->id], false)}}" class="col">
+            <div class="nav-label col">
+                <div>
+                    <i class="fa fa-shopping-cart" aria-hidden="true">
+                    </i>
+                </div>
+                <span class="nav-text">
+                    Keranjang
+                </span>
             </div>
-            <span class="nav-text">
-                <a href="{{route('buyCart', ['banner_id' => $banner->id], false)}}">Keranjang</a>
-            </span>
-        </div>
+        </a>
         @endif
-        <a href="{{route('seeUser', [], false)}}">
+        <a href="{{route('seeUser', [], false)}}" class="col">
             <div class="nav-label col">
                 <div>
                     <i class="fa fa-user" aria-hidden="true"></i>
@@ -121,7 +125,7 @@
 
 
         @guest
-        <a href="{{route('login', [], false)}}">
+        <a href="{{route('login', [], false)}}" class="col">
             <div class="nav-label col">
                 <div>
                     <i class="fa fa-user" aria-hidden="true"></i>
@@ -133,7 +137,7 @@
         </a>
         @endguest
 
-        <a href="{{route('faq', [], false)}}">
+        <a href="{{route('faq', [], false)}}" class="col">
             <div class="nav-label col">
                 <div>
                     <i class="fa fa-info-circle" aria-hidden="true"></i>
@@ -145,7 +149,7 @@
         </a>
 
         @if (Auth::user()->isAdmin())
-        <a href="{{route('showPageAdmin', [], false)}}">
+        <a href="{{route('showPageAdmin', [], false)}}" class="col">
             <div class="nav-label col">
                 <div>
                     <i class="fa fa-book" aria-hidden="true"></i>
@@ -157,7 +161,7 @@
         </a>
         @endif
 
-        <a href="{{route('logout', [], false)}}">
+        <a href="{{route('logout', [], false)}}" class="col">
             <div class="nav-label col">
                 <div>
                     <i class="fa fa-sign-out" aria-hidden="true"></i>
