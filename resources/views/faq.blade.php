@@ -53,7 +53,7 @@
 <div class="py-5 container">
   <h1 class="text-primary">
     @include('layout/back', ['to' => route("home", [], false)])
-    <span>FAQ</span>
+    <span>Tanya Jawab</span>
   </h1>
   <h3 class="my-5 text-center">Tata Cara Pendaftaran dan Pembayaran Keikutsertaan Pelatihan</h3>
   <div id="accordion" class="mt-4">
